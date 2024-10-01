@@ -10,55 +10,27 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <aside class="dashboard-aside-wrapper col-2 p-3">
+    <aside class="sidebar">
         <ApplicationLogo></ApplicationLogo>
-        <ul>
-            <li>
-                <Link :href="route('dashboard')" class="d-flex justify-content-between align-items-center p-2">
-                    <p><i class="fa-solid fa-dashboard pe-2"></i>Dashboard</p>
-                </Link>
-            </li>
-<!--            <li>-->
-<!--                <NavLink :href="route('teams')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-futbol pe-2"></i>Teams</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('tournaments')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-trophy pe-2"></i>Tournaments</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('matches')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-futbol pe-2"></i>Matches</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('counties')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-earth-africa pe-2"></i>Counties</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('news.index')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-copy pe-2"></i>News</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('profile.edit')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-regular fa-address-card pe-2"></i>Profile</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <NavLink :href="route('users.index')" class="d-flex justify-content-between align-items-center p-2">-->
-<!--                    <p><i class="fa-solid fa-user pe-2"></i>Administration</p>-->
-<!--                </NavLink>-->
-<!--            </li>-->
-            <li>
-                <NavLink :href="route('logout')" method="post" as="button"
-                         class="d-flex justify-content-between align-items-center p-2">
-                    <p><i class="fa-solid fa-power-off pe-2"></i>Logout</p>
-                </NavLink>
-            </li>
-        </ul>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><Link :href="route('dashboard')" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
+                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                <li><a href="#"><i class="fas fa-briefcase"></i> My Jobs</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="#"><i class="fas fa-file-upload"></i> Submit Job</a></li>
+                <li><a href="#"><i class="fas fa-user-check"></i> Save Candidate</a></li>
+                <li><a href="#"><i class="fas fa-gem"></i> Membership</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Account Settings</a></li>
+                <li><NavLink :href="route('logout')"><i class="fas fa-trash"></i> Delete Account</NavLink></li>
+            </ul>
+        </nav>
+        <div class="profile-progress">
+            <p>87% Profile Complete</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </aside>
 </template>

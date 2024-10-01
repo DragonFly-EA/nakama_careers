@@ -1,48 +1,119 @@
 <template>
-    <main class="container-fluid">
-        <div class="row">
-            <Head title="Dashboard"/>
-            <AuthenticatedLayout>
-            </AuthenticatedLayout>
-            <article class="col-10">
-                <Header/>
-                <section class="">
-                    <div class="container-fluid px-3">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="mb-8">
-                                    <h2 class="mb-2">Dashboard</h2>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item">
-                                            <Link :href="route('dashboard')">
-                                                <i class="fa-solid fa fa-home pe-2" style="color: #0a6b7a"></i>
-                                            </Link>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="dashboard-2cards-grid d-grid gap-4">
-                            <div class="dashboard-card dashboard-card1 p-4 text-center">
-                                <canvas id="myRadarChart" width="400" height="400"></canvas>
-                            </div>
-                            <div class="dashboard-card dashboard-card2 p-4">
-                                <canvas id="myDoughnutChart" width="400" height="400"></canvas>
-                            </div>
-                        </div>
-                        <div class="dashboard-3cards-grid d-grid gap-4 mt-4">
+    <div class="container">
+        <Head title="Dashboard"/>
+        <AuthenticatedLayout>
+        </AuthenticatedLayout>
+        <!-- Main Content -->
+        <main>
+            <header class="main-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search here...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="post-job-btn"><i class="fas fa-plus-circle"></i> Post a Job</button>
+            </header>
 
+            <section class="dashboard">
+                <h1>Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <h3>07</h3>
+                            <p>Posted Jobs</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
                     </div>
-                </section>
-            </article>
-        </div>
-    </main>
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <h3>03</h3>
+                            <p>Shortlisted</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <h3>1.7k</h3>
+                            <p>Applications</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-content">
+                            <h3>04</h3>
+                            <p>Saved Candidates</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-views-section">
+                    <!-- Job Views Graph Section -->
+                    <div class="job-views">
+                        <h2>Job Views</h2>
+                        <div class="job-views-filter">
+                            <label for="job-select">Jobs:</label>
+                            <select id="job-select">
+                                <option>Web & Mobile Prototype designer...</option>
+                            </select>
+                        </div>
+                        <div class="graph-container">
+                            <canvas id="jobViewsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Posted Job Section -->
+                    <div class="posted-jobs">
+                        <h2>Posted Jobs</h2>
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Web & Mobile Prototype</strong>
+                                    <span>Fulltime - Spain</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Document Writer</strong>
+                                    <span>Part-time - Italy</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Outbound Call Service</strong>
+                                    <span>Fulltime - USA</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Product Designer</strong>
+                                    <span>Part-time - Dubai</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Marketing Specialist</strong>
+                                    <span>Part-time - UK</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </template>
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
@@ -69,3 +140,4 @@ export default {
     },
 }
 </script>
+
