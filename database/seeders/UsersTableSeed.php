@@ -21,6 +21,7 @@ class UsersTableSeed extends Seeder
                 'lastname' => 'Sammy',
                 'email' => 'nelson@dragonfly.africa',
                 'password'=>Hash::make('secret'),
+                'profile'=>'https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png',
             ]
         ];
         User::insert($users);

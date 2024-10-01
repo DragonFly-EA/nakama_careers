@@ -1,0 +1,1120 @@
+article {
+    width: 100%;
+    float: left;
+}
+
+a {
+    transition: all ease 0.7s;
+}
+
+.terms-conditions-wrapper {
+    width: 100%;
+    float: left;
+    min-height: 85vh;
+}
+
+.terms-conditions {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5em 0;
+}
+
+.terms-conditions h1 {
+    color: var(--color2);
+    font-weight: 800;
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+
+.terms-conditions h3 {
+    color: var(--color2);
+    padding: 30px 0 5px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.terms-conditions .terms-conditions-title {
+    padding: 5px 0 5px;
+}
+
+.terms-conditions p {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.terms-conditions ul {
+    padding-left: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px #dadada solid;
+}
+
+.terms-conditions ul:last-child {
+    padding-bottom: 0;
+    border: none;
+}
+
+.terms-conditions li {
+    font-size: 15px;
+    padding-bottom: 5px;
+    color: #555;
+    list-style: disc;
+}
+
+.terms-conditions li a {
+    color: var(--color1);
+}
+
+.terms-conditions table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    min-width: 50%;
+}
+
+.terms-conditions table td {
+    border: 1px solid #aaa;
+    padding: 5px 12px;
+}
+
+.terms-conditions table td:nth-child(2) {
+    text-align: center;
+}
+
+.faq-container h2 {
+    padding-bottom: 20px;
+}
+
+.faq-accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.faq-accordion .accordion-item button[aria-expanded=true] {
+    border-bottom: 1px solid var(--color2);
+}
+
+.faq-accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #8C8986;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.accordion-item {
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.accordion-item:first-of-type {
+    border-radius: 0;
+}
+
+.faq-accordion button:hover, .faq-accordion button:focus {
+    cursor: pointer;
+    color: var(--color2);
+}
+
+.faq-accordion button:hover::after, .faq-accordion button:focus::after {
+    cursor: pointer;
+    color: var(--color2);
+    border: 1px solid var(--color2);
+}
+
+.faq-accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+}
+
+.faq-accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.faq-accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.faq-accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.faq-accordion button[aria-expanded=true] {
+    color: var(--color2);
+}
+
+.faq-accordion button[aria-expanded=true] .icon::after {
+    width: 0;
+}
+
+.faq-accordion button[aria-expanded=true] + .accordion-content {
+    opacity: 1;
+    max-height: 15em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.faq-accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.faq-accordion .accordion-content p, .faq-accordion .accordion-content ul {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 2em 0;
+}
+
+.faq-accordion .accordion-content ul li {
+    color: #8C8986;
+    padding-bottom: 5px;
+}
+
+.about-prizes {
+    position: relative;
+}
+
+.about-prizes .prizes-img {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 210px;
+}
+
+.about-content-wrapper .about-content ul li {
+    line-height: 1.8;
+    padding-bottom: 10px;
+}
+
+.home-content-right .group-tables td:first-child, .home-content-right .group-tables th:first-child {
+    text-align: left;
+}
+
+.latest-news ul li a .news-read-more p {
+    transition: all ease 0.7s;
+}
+
+.latest-news ul li a .news-read-more i {
+    transition: all ease 0.7s;
+}
+
+.view-more-btn a {
+    border: var(--color1) solid 1px;
+}
+
+.view-more-btn a:hover {
+    background: var(--color2);
+    background: white;
+    border: var(--color1) solid 1px;
+    color: var(--color1);
+}
+
+.top-weekly-teams ol li a:hover {
+    background: var(--color2);
+    background: white;
+    border: var(--color1) solid 1px;
+    color: var(--color1);
+}
+
+.single_news_banner img {
+    max-height: 60vh;
+    object-fit: cover;
+}
+
+
+.fixture-team .team_color {
+    color: #fff !important;
+    line-height: 1.2;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.team-banner-content img {
+    color: #fff !important;
+    line-height: 1.2;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.badge-card img {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    border-radius: 50%;
+
+}
+
+
+/*Ammends Final*/
+.r-1q9bdsx {
+    border-radius: none !important;
+}
+
+.top-weekly-teams ol li a {
+    border: transparent solid 1px;
+}
+
+.news-wrapper .latest-news ul {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+}
+
+.about-prizes-wrapper {
+    position: relative;
+}
+
+.about-prizes {
+    position: unset;
+}
+
+.about-prizes .prizes-img {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 210px;
+}
+
+.about-content-wrapper .about-content ul li {
+    line-height: 1.8;
+    padding-bottom: 10px;
+}
+
+.about-prizes-wrapper .about-prizes {
+    width: 40%;
+}
+
+.county-prizes .prizes-img {
+    right: 7%;
+}
+
+.intercounty-prizes .prizes-img {
+    right: 15%;
+    z-index: 123;
+}
+
+.about-prizes-wrapper .about-prizes h2 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.top-weekly-teams ol li {
+    transition: all ease 0.7s;
+}
+
+.top-weekly-teams ol li:hover {
+    background-color: #E1EFD7;
+}
+
+.top-weekly-teams ol li:hover a {
+    background: var(--color2) !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+.top-weekly-teams ol li:hover a {
+    background: var(--color2) !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+.county-fixtures-wrapper nav {
+    background: #F1F1F3;
+    padding: 0px 0;
+    float: left;
+    width: 100%;
+}
+
+select:focus {
+    border-color: var(--color1);
+}
+
+.county-fixtures-wrapper .nav-tabs .nav-item.show .nav-link, .county-fixtures-wrapper .nav-tabs .nav-link.active {
+    color: var(--color1);
+    font-weight: 900;
+    border: none;
+    border-bottom: 3px var(--color1) solid;
+    background: none;
+
+}
+
+.county-fixtures-wrapper .nav-tabs {
+    padding-top: 0;
+}
+
+.county-filter-wrapper {
+    padding: 2em 0;
+}
+
+.county-fixtures-wrapper .nav-tabs {
+    border: none;
+}
+
+.county-fixtures-wrapper .nav-tabs .nav-link {
+    padding: 20px 3px 20px 3px;
+    margin-right: 30px;
+    text-transform: uppercase;
+}
+
+.tab-content > .tab-pane {
+    float: left;
+    width: 100%;
+}
+
+.fixtures-table tbody tr {
+    border-color: #dadada;
+}
+
+.desktop_sliders {
+    display: block;
+}
+
+.mobile_sliders {
+    display: none;
+}
+
+.mobile_sliders ol li {
+    width: 125% !important;
+    margin: 0px !important;
+}
+
+.top-weekly-teams .mobile_sliders ol li {
+    width: 100% !important;
+}
+
+.teams_banner img {
+    max-height: 60vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+.county-fixtures-wrapper .squad-wrapper .squad-group ul li h4 {
+    flex-wrap: wrap;
+}
+
+.county-fixtures-wrapper .squad-wrapper .squad-group ul li h4 p {
+    width: 100%;
+}
+
+.single-news-header {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 65%);
+}
+
+
+@media handheld, only screen and (max-width: 1200px) {
+    .about-content-wrapper .about-video iframe {
+        min-height: 500px;
+    }
+
+    .about-prizes-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .about-prizes-wrapper .about-prizes {
+        width: 100%;
+    }
+
+    .about-prizes-wrapper .county-prizes {
+        padding-left: 0;
+    }
+
+    .about-prizes-wrapper .intercounty-prizes {
+        border: none;
+    }
+
+    .intercounty-prizes .prizes-img {
+        top: 10%;
+        transform: unset;
+        right: 10%;
+    }
+
+    .county-prizes .prizes-img {
+        transform: unset;
+        right: 10%;
+    }
+
+    .about-prizes-wrapper .about-prizes h2 {
+        display: none;
+    }
+}
+
+@media handheld, only screen and (max-width: 960px) {
+    .terms-conditions {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .desktop_sliders {
+        display: none;
+    }
+
+    .mobile_sliders {
+        display: block;
+    }
+
+    .terms-conditions h1 {
+        padding-bottom: 5px;
+    }
+
+    .terms-conditions h3 {
+        padding: 15px 0 5px
+    }
+
+    .about-prizes-wrapper {
+        padding: 30px;
+    }
+
+    .latest-news h2 {
+        padding-bottom: 10px;
+    }
+
+    .latest-news {
+        padding-bottom: 2em;
+    }
+
+    .top-weekly-teams {
+        padding: 0 10px 20px;
+        width: 100%;
+        float: left;
+    }
+
+    .top-weekly-teams h2 {
+        padding-bottom: 10px;
+    }
+
+    .fixtures-table h3 {
+        padding-left: 10px;
+    }
+
+    .mobile-navigation ul li a {
+        font-size: 14px;
+    }
+
+    .news-wrapper .latest-news ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    }
+
+    .latest-news ul {
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media handheld, only screen and (max-width: 768px) {
+    .about-content-wrapper .about-video iframe {
+        min-height: 360px;
+    }
+
+    .about-prizes .prizes-img {
+        width: 180px;
+    }
+
+    .about-prizes-wrapper .county-prizes {
+        padding: 0;
+    }
+
+    .shop-online .shop-online-content {
+        position: unset;
+        padding: 40px 20px;
+        background: url('../images/shop-online.jpg');
+        transform: unset;
+        background-size: cover;
+    }
+
+    .shop-online figure {
+        display: none;
+    }
+
+    .shop-online .shop-online-content a {
+        float: unset;
+    }
+
+    .shop-online {
+        float: left;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .home-social-feeds ul li {
+        width: 100%;
+    }
+
+    .home-social-feeds ul {
+        flex-wrap: wrap;
+    }
+
+    .team-details-tabs-wrapper .nav-link {
+        font-size: 14px !important;
+        margin-right: 20px !important;
+        padding: 10px 3px 10px 3px !important;
+    }
+
+    .squad-group {
+        padding-top: 25px;
+    }
+
+    .squad-group h2 {
+        padding-bottom: 10px;
+    }
+
+    .squad-group ul {
+        gap: 15px
+    }
+
+    .fixtures-table table {
+        margin-top: 0;
+    }
+
+    .fixtures-table tbody {
+        padding: 0 10px;
+    }
+
+    .team-banner-wrapper .team-banner-content .team-banner-details h1 {
+        font-size: 20px;
+    }
+
+    .previous-matches .view-more-btn {
+        padding: 30px 0 0 10px;
+    }
+
+    .team-details-tabs-wrapper .nav {
+        flex-wrap: nowrap;
+    }
+
+    .county-fixtures-wrapper .nav-tabs {
+        flex-wrap: nowrap;
+    }
+
+    .supercup-table thead th:nth-child(1), .supercup-table tbody td:nth-child(1) {
+        display: none;
+    }
+
+    .supercup-table thead th:nth-child(2), .supercup-table tbody td:nth-child(2) {
+        text-align: left;
+    }
+
+    .table-tab-wrapper .supercup-table tbody td:nth-child(7), .table-tab-wrapper .supercup-table tbody td:nth-child(1), .table-tab-wrapper .supercup-table tbody td:nth-child(8) {
+        display: none;
+    }
+
+    .table-tab-wrapper .supercup-table thead th:nth-child(1), .table-tab-wrapper .supercup-table thead th:nth-child(7), .table-tab-wrapper .supercup-table thead th:nth-child(8) {
+        display: none;
+    }
+
+    .table-tab-wrapper .supercup-table thead th:nth-child(2), .table-tab-wrapper .supercup-table tbody td:nth-child(2) {
+        text-align: left;
+    }
+
+    .table-tab-wrapper .supercup-table table {
+        margin-top: 0;
+    }
+
+    .county-fixtures-wrapper .nav-tabs .nav-link {
+        margin-right: 20px;
+    }
+
+    .latest-news ul li a .news-content-intro p {
+        line-height: 20px;
+    }
+
+    .latest-news ul li a .news-content-intro {
+        padding: 18px;
+    }
+
+    .county-fixtures-wrapper .squad-wrapper .squad-group ul {
+        grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))
+    }
+
+    .county-fixtures-wrapper .squad-wrapper .squad-group ul li h4 {
+        flex-wrap: wrap;
+    }
+
+    .county-fixtures-wrapper .squad-wrapper .squad-group ul li h4 p {
+        width: 100%;
+    }
+}
+
+@media handheld, only screen and (max-width: 600px) {
+    .about-content-wrapper .about-video iframe {
+        min-height: 280px;
+    }
+
+    .latest-news ul {
+        grid-template-columns:1fr;
+    }
+
+    .about-prizes .prizes-img {
+        display: none;
+    }
+
+    .about-prizes-wrapper .about-prizes .winner {
+        font-size: 1.3em;
+    }
+
+    .about-prizes-wrapper .about-prizes .runners-up {
+        font-size: 1.1em;
+    }
+
+    .about-prizes-wrapper .about-prizes .third-place {
+        font-size: 1em;
+    }
+
+    .previous-matches ul {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .squad-group .modal {
+        transform: unset;
+        top: 10%;
+    }
+
+    .squad-group .modal .modal-body {
+        padding: 10px 20px 20px;
+        flex-wrap: wrap;
+    }
+
+    .squad-group .modal .modal-body img {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .squad-group .modal .modal-body .player-details {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .squad-group .modal .modal-body .player-details h2 {
+        padding: 10px 0 0;
+        font-size: 1.5em !important;
+    }
+
+    .squad-group .modal .modal-body .player-stats-wrapper {
+        padding-top: 0px;
+        flex-wrap: wrap;
+    }
+
+    .squad-group .modal .modal-body .player-stats {
+        width: unset;
+        margin-right: 15px;
+        padding-top: 10px;
+    }
+
+    .county-filter-wrapper {
+        padding: 20px 0;
+    }
+
+    .county-filter {
+        flex-wrap: wrap;
+    }
+
+    .county-filter select {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .single-news-header h1 {
+        font-size: 1.2em;
+        padding-bottom: 5px;
+    }
+
+    .single-news-header .date-share {
+        padding-top: 5px;
+    }
+
+    .single-news-header .date-share p {
+        font-size: 14px;
+    }
+
+    .home-banner-content h1 {
+        padding-bottom: 0px;
+    }
+
+    .home-banner-content p {
+        line-height: 18px;
+        padding-bottom: 0;
+    }
+
+    .team-banner-content img {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 16px !important;
+    }
+
+    .fixtures-results-wrapper h2 {
+        padding: 20px 0 10px 10px;
+    }
+}
+
+
+/******** Leaderboard Styling ******/
+
+.leaderboard-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 10px;
+}
+
+.leaderboard-select h3 {
+    font-size: 20px;
+    font-family: "Lato", "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    color: var(--color1);
+}
+
+ul.leaderboard-select-list {
+    display: flex;
+    padding: 10px 0;
+}
+
+ul.leaderboard-select-list li {
+    padding: 0 0 0 20px;
+}
+
+.home-leaderboard .top-weekly-teams {
+    padding: 0 10px 4em;
+}
+
+.leaderboard-img {
+    position: unset !important;
+    max-height: 70px;
+    height: 100% !important;
+    border-radius: 50%;
+}
+
+.home-leaderboard-list {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home-leaderboard-list li .home-leaderboard-list-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-leaderboard .top-weekly-teams ul li p {
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.top-weekly-teams ul {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+}
+
+.home-leaderboard .top-weekly-teams ul {
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)) !important;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.home-leaderboard .top-weekly-teams ul li {
+    padding: 20px;
+}
+
+.home-leaderboard .top-weekly-teams ul li h3 {
+    font-weight: 700;
+    padding: 3px 0 2px;
+    font-size: 17px;
+}
+
+.stats-details-wrapper {
+    padding-left: 7px;
+}
+
+.stats-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.stats-details p:first-child {
+    padding-right: 10px;
+}
+
+.stats-details p b {
+    font-weight: 700;
+    /*color:#222;*/
+}
+
+.stats-details p {
+    /*color:var(--color2);*/
+}
+
+.squad-group ul li h4 {
+    width: 100%;
+    background: var(--color1);
+    color: white;
+    /*height: 100%;*/
+    padding: 15px 20px;
+}
+
+.squad-group ul li button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.squad-group ul li h4:nth-child(2) {
+    padding: 0 20px 15px;
+}
+
+.news-wrapper .latest-news ul {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+}
+
+.latest-news-home {
+    gap: 0 !important;
+    justify-content: space-between;
+}
+
+.latest-news-home li:nth-child(1) {
+    width: calc(62% - 20px) !important;
+}
+
+.home-leaderboard .view-more-btn {
+    padding: 15px 0 0 0;
+}
+
+
+@media handheld, only screen and (max-width: 1560px) {
+    .home-leaderboard .top-weekly-teams ul {
+        max-height: 100%;
+    }
+}
+
+@media handheld, only screen and (max-width: 1400px) {
+    .home-leaderboard .top-weekly-teams ul {
+        max-height: 150px;
+    }
+
+    .home-content {
+        gap: 0;
+    }
+}
+
+@media handheld, only screen and (max-width: 1100px) {
+    .home-leaderboard .top-weekly-teams ul {
+        max-height: 100%;
+    }
+}
+
+@media handheld, only screen and (max-width: 960px) {
+    .squad-group ul li h4:nth-child(2) {
+        padding: 0 10px 10px;
+    }
+
+    .home-leaderboard .top-weekly-teams ul {
+        max-height: 150px;
+    }
+
+    .top-weekly-teams {
+        padding: 0 10px 20px;
+    }
+}
+
+@media handheld, only screen and (max-width: 910px) {
+    .home-leaderboard .top-weekly-teams ul {
+        max-height: 100%;
+    }
+
+    .home-leaderboard .view-more-btn {
+        padding: 30px 0 0 0;
+    }
+}
+
+@media handheld, only screen and (max-width: 768px) {
+    .latest-news-home {
+        flex-wrap: wrap;
+        gap: 20px !important;
+    }
+
+    .latest-news-home li:nth-child(1) {
+        width: 100% !important;
+        min-height: 400px;
+    }
+
+    .latest-news-home li:nth-child(2) {
+        width: 100% !important;
+    }
+}
+
+@media handheld, only screen and (max-width: 600px) {
+    .latest-news-home li:nth-child(1) {
+        width: 100% !important;
+        min-height: 300px;
+    }
+}
+
+
+.technical_team_profile {
+    justify-content: center;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: var(--color1);
+    display: flex;
+    flex-direction: column;
+}
+
+.technical_team_profile h4 {
+    height: fit-content !important;
+}
+
+.technical_team_profile h4:nth-child(1) {
+    padding-bottom: 0 !important;
+}
+
+
+
+/*Penalty scores styling*/
+.fixture-teams .results-wrapper{
+    min-width:70px;
+}
+.fixture-teams .results-wrapper p{
+    padding:0;
+    line-height:18px;
+    text-align:center;
+}
+.fixture-teams .results-wrapper p:nth-child(1){
+    font-size:11px;
+    font-weight:600;
+}
+.fixture-teams{
+    justify-content:center;
+}
+
+
+@media handheld, only screen and (max-width: 600px){
+    .fixtures-table tbody td .fixture-team{padding:0 10px;}
+}
+
+
+/*Winners css*/
+.winners-wrapper{
+    width:100%;
+    float:left;
+    padding:2em 7.5%;
+}
+.winning-teams{
+    padding:2em 0 1em;
+}
+.winning-teams h3{
+    font-size:20px;
+    font-weight:900;
+    color:var(--color1);
+    padding-bottom:20px;
+}
+.winning-teams ul{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:20px;
+}
+.winning-teams ul li{
+    background-color: #F1F1F3;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.winning-teams ul li:nth-child(even){
+    background-color: #E1EFD7;
+}
+.winning-teams ul li .winner-content{
+    padding:20px;
+    position:relative;
+}
+.winning-teams ul li .winner-content h4{
+    color:#333;
+    font-size: 14px;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+.winning-teams ul li .winner-content h2{
+    color:var(--color2);
+    font-size:18px;
+}
+.winning-teams ul li .winner-content p{
+    color:#333;
+    font-size: 13px;
+}
+.winning-teams ul li .winner-content img{
+    position:absolute;
+    right:10px;
+    top:5px;
+    bottom:5px;
+    width:45px;
+}
+.individual-winners{
+    padding-top:0;
+}
+
+@media handheld, only screen and (max-width: 1100px){
+    .winning-teams ul{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media handheld, only screen and (max-width: 960px){
+    .winners-wrapper{padding:20px;}
+    .winning-teams{padding:0 0 10px;}
+    .winning-teams h3{padding-bottom:10px;}
+}
+
+.upcoming-fixtures ol li .fixture-teams p:nth-child(2) {
+    padding: 0 0 0 12px !important;
+    white-space:nowrap !important
+}
+.upcoming-fixtures ol li .fixture-teams p:nth-child(3) {
+    white-space:nowrap !important
+}
+.upcoming-fixtures ol li .fixture-teams .fixture-team p{
+    white-space:wrap !important
+}
+.upcoming-fixtures ol li .fixture-teams p:nth-child(2) span{
+    padding-left: 12px !important;
+}
