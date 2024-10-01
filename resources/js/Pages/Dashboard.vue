@@ -59,7 +59,6 @@
                             </select>
                         </div>
                         <div class="graph-container">
-                            <canvas id="jobViewsChart"></canvas>
                         </div>
                     </div>
 
@@ -103,6 +102,63 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="job-views-section">
+
+                    <!-- Posted Job Section -->
+                    <div class="posted-jobs">
+                        <h2>Posted Jobs</h2>
+                        <ul>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Web & Mobile Prototype</strong>
+                                    <span>Fulltime - Spain</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Document Writer</strong>
+                                    <span>Part-time - Italy</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Outbound Call Service</strong>
+                                    <span>Fulltime - USA</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Product Designer</strong>
+                                    <span>Part-time - Dubai</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div class="job-info">
+                                    <strong>Marketing Specialist</strong>
+                                    <span>Part-time - UK</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Job Views Graph Section -->
+                    <div class="job-views">
+                        <h2>Job Views</h2>
+                        <div class="job-views-filter">
+                            <label for="job-select">Jobs:</label>
+                            <select id="job-select">
+                                <option>Web & Mobile Prototype designer...</option>
+                            </select>
+                        </div>
+                        <div class="graph-container">
+                            <canvas id="jobViewsChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </section>

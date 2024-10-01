@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,6 +40,10 @@ Route::middleware('auth')->group(function () {
     //Jobs Routes
     Route::group(['prefix'=>'jobs'],function (){
         Route::get('/', [JobController::class, 'index'])->name('jobs.index');
+    });
+    //Administration
+    Route::group(['prefix'=>'users'],function (){
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
     });
 });
 

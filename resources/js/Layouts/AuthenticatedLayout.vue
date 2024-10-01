@@ -5,8 +5,10 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import {Link} from '@inertiajs/vue3';
+import {Link,usePage} from '@inertiajs/vue3';
 const showingNavigationDropdown = ref(false);
+
+const currentRoute = window.location.pathname;
 </script>
 
 <template>
@@ -14,11 +16,11 @@ const showingNavigationDropdown = ref(false);
         <ApplicationLogo></ApplicationLogo>
         <nav class="sidebar-nav">
             <ul>
-                <li><Link :href="route('dashboard')" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
-                <li><Link :href="route('jobs.index')"><i class="fas fa-list"></i> Jobs</Link></li>
+                <li><Link :href="route('dashboard')"  :class="{'active': currentRoute === '/dashboard'}"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
+                <li><Link :href="route('jobs.index')" :class="{'active': currentRoute==='/jobs'}"><i class="fas fa-list"></i> Jobs</Link></li>
                 <li><a href="#"><i class="fas fa-table"></i> Applications</a></li>
                 <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Administration</a></li>
+                <li><Link :href="route('users.index')" :class="{'active':currentRoute==='/users'}"><i class="fas fa-cog"></i> Administration</Link></li>
                 <li><NavLink :href="route('logout')"><i class="fas fa-trash"></i> Delete Account</NavLink></li>
             </ul>
         </nav>
