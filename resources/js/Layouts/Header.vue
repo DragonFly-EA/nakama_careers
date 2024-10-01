@@ -2,23 +2,26 @@
 import { Head } from '@inertiajs/vue3';
 </script>
 <template>
-    <header class="row d-flex">
-        <nav class="col-12 d-flex justify-content-between align-items-center py-3 px-4">
-            <h1 class="fs-4">
-            </h1>
-            <div class="search-profile d-flex align-items-center">
-                <div class="search-container d-flex">
-                    <input type="text" id="search" placeholder="Search for ...">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-                <div class="profile-container d-flex align-items-center">
-                    <img :src="$page.props.auth.user.profile" alt="Profile Image">
-                    <div class="profile-name d-block">
-                        <h3 class="">{{$page.props.auth.user.firstname+' '+$page.props.auth.user.lastname}}</h3>
-<!--                        <p>{{$page.props.auth.user.role.name}}</p>-->
-                    </div>
-                </div>
+    <header class="main-header">
+        <div class="search-bar">
+            <input type="text" placeholder="Search here...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <!-- Notification Icon -->
+        <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">3</span>
+
+            <!-- Notification Dropdown -->
+            <div class="notification-dropdown">
+                <ul>
+                    <li><a href="#">New comment on your post</a></li>
+                    <li><a href="#">New friend request</a></li>
+                    <li><a href="#">New message from John</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+
+        <button class="post-job-btn"><i class="fas fa-plus-circle"></i> Post a Job</button>
     </header>
 </template>

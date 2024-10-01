@@ -15,13 +15,10 @@ const showingNavigationDropdown = ref(false);
         <nav class="sidebar-nav">
             <ul>
                 <li><Link :href="route('dashboard')" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
+                <li><Link :href="route('jobs.index')"><i class="fas fa-list"></i> Jobs</Link></li>
+                <li><a href="#"><i class="fas fa-table"></i> Applications</a></li>
                 <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
-                <li><a href="#"><i class="fas fa-briefcase"></i> My Jobs</a></li>
-                <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
-                <li><a href="#"><i class="fas fa-file-upload"></i> Submit Job</a></li>
-                <li><a href="#"><i class="fas fa-user-check"></i> Save Candidate</a></li>
-                <li><a href="#"><i class="fas fa-gem"></i> Membership</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Account Settings</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Administration</a></li>
                 <li><NavLink :href="route('logout')"><i class="fas fa-trash"></i> Delete Account</NavLink></li>
             </ul>
         </nav>
@@ -31,6 +28,6 @@ const showingNavigationDropdown = ref(false);
                 <div class="progress"></div>
             </div>
         </div>
-        <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <Link :href="route('logout')" method="post" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</Link>
     </aside>
 </template>

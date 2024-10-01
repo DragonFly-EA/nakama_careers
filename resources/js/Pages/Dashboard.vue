@@ -5,13 +5,7 @@
         </AuthenticatedLayout>
         <!-- Main Content -->
         <main>
-            <header class="main-header">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search here...">
-                    <i class="fas fa-search search-icon"></i>
-                </div>
-                <button class="post-job-btn"><i class="fas fa-plus-circle"></i> Post a Job</button>
-            </header>
+            <Header/>
 
             <section class="dashboard">
                 <h1>Dashboard</h1>
@@ -22,7 +16,7 @@
                             <p>Posted Jobs</p>
                         </div>
                         <div class="stat-icon">
-                            <i class="fas fa-briefcase"></i>
+                            <i class="fa-regular fa-square-full"></i>
                         </div>
                     </div>
                     <div class="stat-box">
@@ -31,7 +25,7 @@
                             <p>Shortlisted</p>
                         </div>
                         <div class="stat-icon">
-                            <i class="fas fa-user-check"></i>
+                            <i class="fa-regular fa-bookmark"></i>
                         </div>
                     </div>
                     <div class="stat-box">
@@ -40,7 +34,7 @@
                             <p>Applications</p>
                         </div>
                         <div class="stat-icon">
-                            <i class="fas fa-eye"></i>
+                            <i class="fa fa-eye"></i>
                         </div>
                     </div>
                     <div class="stat-box">
@@ -49,7 +43,7 @@
                             <p>Saved Candidates</p>
                         </div>
                         <div class="stat-icon">
-                            <i class="fas fa-bookmark"></i>
+                            <i class="fa-regular fa-pen-to-square"></i>
                         </div>
                     </div>
                 </div>
@@ -112,6 +106,7 @@
                     </div>
                 </div>
             </section>
+            <Footer/>
         </main>
     </div>
 </template>
@@ -120,6 +115,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Header from '@/Layouts/Header.vue'
 import {Head} from '@inertiajs/vue3';
 import {Link} from '@inertiajs/vue3';
+import Footer from "@/Layouts/Footer.vue";
 </script>
 <script>
 // import Chart from "chart.js/auto"
@@ -132,11 +128,52 @@ export default {
       //  this.radarChart();
         // this.barChart();
     //    this.doughnutChart();
-        //this.lineChart();
+        this.lineChart();
         //this.bubbleChart();
     },
     methods: {
-
+        lineChart(){
+            const ctx = document.getElementById('jobViewsChart').getContext('2d');
+            const jobViewsChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                    datasets: [{
+                        label: 'Job Views',
+                        data: [50, 100, 200, 150, 250, 150, 100],
+                        fill: true,
+                        backgroundColor: 'rgba(85, 230, 115, 0.2)',
+                        borderColor: '#55E673',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#55E673',
+                        pointBorderColor: '#fff',
+                        pointRadius: 5,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#ddd'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        },
     },
 }
 </script>

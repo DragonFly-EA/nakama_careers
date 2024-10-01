@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
           integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -28,6 +28,21 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
 <script>
+</script>
+<script>
+    // Toggle the dropdown when clicking on the notification icon
+    $(document).ready(function() {
+        $('.notification-icon').on('click', function() {
+            $(this).toggleClass('active');
+        });
+
+        // Hide the dropdown if clicking outside
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.notification-icon').length) {
+                $('.notification-icon').removeClass('active');
+            }
+        });
+    });
 
 </script>
 
