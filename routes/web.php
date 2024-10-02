@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     //Jobs Routes
     Route::group(['prefix'=>'jobs'],function (){
         Route::get('/', [JobController::class, 'index'])->name('jobs.index');
+        Route::get('/create', [JobController::class, 'create'])->name('jobs.create');
     });
     //Administration
     Route::group(['prefix'=>'users'],function (){

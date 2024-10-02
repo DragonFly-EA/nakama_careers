@@ -12,4 +12,8 @@ class JobController extends Controller
     {
         return Inertia::render('jobs/Index');
     }
+    public function create()
+    {
+        return Inertia::render('jobs/Create');
+    }
 }
