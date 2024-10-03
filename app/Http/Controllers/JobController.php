@@ -30,7 +30,6 @@ class JobController extends Controller
             $job->description = $request->description;
             $job->requirements = $request->requirements;
             $job->expires_on = $request->expires_on;
-            $job->status = $request->status;
             $job->slug = Str::slug($request->title);
             $job->save();
             DB::commit();

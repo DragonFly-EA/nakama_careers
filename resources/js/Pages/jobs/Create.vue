@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="location">Location:</label>
-                        <input type="text" id="location" v-model="location" placeholder="Enter your email">
+                        <input type="text" id="location" v-model="location" placeholder="Location">
                     </div>
                     <div class="form-group">
                         <label for="expires_on">Expires On</label>
@@ -29,6 +29,7 @@
                             placeholder="write description here..."
                             v-model="description"
                             @ready="onEditorReady"
+                            @input="onEditorInput('description', $event)"
                             toolbar="full"
                         />
                     </div>
@@ -38,6 +39,7 @@
                             placeholder="write description here..."
                             v-model="requirements"
                             @ready="onEditorReady"
+                            @input="onEditorInput('requirements', $event)"
                             toolbar="full"
                         />
                     </div>
@@ -59,6 +61,10 @@ import Footer from "@/Layouts/Footer.vue";
 <script>
 import {QuillEditor} from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
+import {useToast} from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
+const $toast = useToast();
 import axios from "axios";
 export default {
     data(){
@@ -78,8 +84,14 @@ export default {
         onEditorReady(editor) {
             this.quill = editor
         },
+        onEditorInput(field,event){
+            console.log(field)
+            this[field] = event.target.innerHTML;
+        },
         createJob(){
             this.loading = true;
+            console.log(this.requirements)
+            console.log(this.description)
             axios.post(route('jobs.store'), {
                 description: this.description,
                 location: this.location,
@@ -89,6 +101,23 @@ export default {
             })
                 .then((response) => {
                     console.log(response)
+                })
+                .catch((error)=>{
+                    if (error.response && error.response.status === 422) {
+                        // Handle validation errors
+                        $.each(error.response.data.errors,function (key, value) {
+                          $toast.error(value[0],{
+                              position: 'top-right',
+                              pauseOnHover: true,
+                              hideProgressBar: false,
+                          })
+                        })
+                    } else {
+                        console.error(error);
+                    }
+                })
+                .finally(()=>{
+                    this.loading = false;
                 })
         }
     }
