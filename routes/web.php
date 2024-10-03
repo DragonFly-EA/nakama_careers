@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix'=>'jobs'],function (){
         Route::get('/', [JobController::class, 'index'])->name('jobs.index');
         Route::get('/create', [JobController::class, 'create'])->name('jobs.create');
+        Route::post('/store', [JobController::class, 'store'])->name('jobs.store');
     });
     //Administration
     Route::group(['prefix'=>'users'],function (){

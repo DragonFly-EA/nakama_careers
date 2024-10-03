@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('attachment')->nullable();
             $table->string('expires_on')->nullable();
             $table->boolean('status')->default(true);
+            $table->string('slug')->nullable();
+            $table->boolean('archive')->default(false);
             $table->timestamps();
         });
     }
