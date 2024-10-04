@@ -4,6 +4,32 @@
         <AuthenticatedLayout>
         </AuthenticatedLayout>
         <main>
+            <Header/>
+            <section class="form-section">
+                <h1>Applications</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <section class="table-section">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full name</th>
+                                    <th>Email & Phone Number</th>
+                                    <th>Job</th>
+                                    <th>Requirements</th>
+                                    <th>Applied on</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </template>

@@ -21,15 +21,8 @@ const currentRoute = window.location.pathname;
                 <li><Link :href="route('applications.index')" :class="{'active': currentRoute==='/applications'}"><i class="fas fa-table"></i> Applications</Link></li>
                 <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
                 <li><Link :href="route('users.index')" :class="{'active':currentRoute==='/users'}"><i class="fas fa-cog"></i> Administration</Link></li>
-                <li><NavLink :href="route('logout')"><i class="fas fa-trash"></i> Delete Account</NavLink></li>
             </ul>
         </nav>
-        <div class="profile-progress">
-            <p>87% Profile Complete</p>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
         <Link :href="route('logout')" method="post" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</Link>
     </aside>
 </template>
