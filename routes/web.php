@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -42,6 +43,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [JobController::class, 'index'])->name('jobs.index');
         Route::get('/create', [JobController::class, 'create'])->name('jobs.create');
         Route::post('/store', [JobController::class, 'store'])->name('jobs.store');
+    });
+    //Applications
+    Route::group(['prefix'=>'applications'],function (){
+        Route::get('/', [ApplicationController::class, 'index'])->name('applications.index');
     });
     //Administration
     Route::group(['prefix'=>'users'],function (){

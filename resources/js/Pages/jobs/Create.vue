@@ -6,7 +6,7 @@
         <main>
             <Header/>
             <section class="form-section">
-                <h2>Create a Job</h2>
+                <h1>Create a Job</h1>
                 <form @submit.prevent="createJob" class="form">
                     <div v-if="loading" class="preloader">
                         <div class="spinner"></div>
