@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [JobController::class, 'index'])->name('jobs.index');
         Route::get('/create', [JobController::class, 'create'])->name('jobs.create');
         Route::post('/store', [JobController::class, 'store'])->name('jobs.store');
+        Route::get('/view/{id}', [JobController::class, 'view'])->name('jobs.view');
+        Route::get('/edit/{id}', [JobController::class, 'edit'])->name('jobs.edit');
+        Route::post('/update', [JobController::class, 'update'])->name('jobs.update');
     });
     //Applications
     Route::group(['prefix'=>'applications'],function (){

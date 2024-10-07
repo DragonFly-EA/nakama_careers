@@ -14,11 +14,21 @@ class JobController extends Controller
     //
     public function index()
     {
-        return Inertia::render('jobs/Index');
+        $jobs = Job::orderBy('id')->get();
+        return Inertia::render('jobs/Index',[
+            'jobs' => $jobs
+        ]);
     }
     public function create()
     {
         return Inertia::render('jobs/Create');
+    }
+    public function view($id)
+    {
+        $job = Job::findOrFail($id);
+        return Inertia::render('jobs/View',[
+            'job' => $job
+        ]);
     }
     public function store(CreateJobRequest $request)
     {
@@ -34,6 +44,33 @@ class JobController extends Controller
             $job->save();
             DB::commit();
             return response()->json(['message'=>'Successfully added a job']);
+        }
+        catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(['error'=>$e->getMessage()],500);
+        }
+    }
+    public function edit($id)
+    {
+        $job = Job::findOrFail($id);
+        return Inertia::render('jobs/Edit',[
+            'job'=>$job
+        ]);
+    }
+    public function update(Request $request)
+    {
+        try {
+            DB::beginTransaction();
+            $job = Job::find($request->id);
+            $job->title = $request->title;
+            $job->location = $request->location;
+            $job->description = $request->description;
+            $job->requirements = $request->requirements;
+            $job->expires_on = $request->expires_on;
+            $job->slug = Str::slug($request->title);
+            $job->save();
+            DB::commit();
+            return response()->json(['message'=>'Successfully updated a job']);
         }
         catch (\Exception $e) {
             DB::rollBack();

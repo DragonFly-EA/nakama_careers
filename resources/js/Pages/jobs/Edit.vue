@@ -1,34 +1,35 @@
 <template>
     <div class="container">
-        <Head title="Create Job"/>
+        <Head :title="job.title"/>
         <AuthenticatedLayout>
         </AuthenticatedLayout>
         <main>
             <Header/>
             <section class="form-section">
-                <h1>Create a Job</h1>
+                <h1>{{job.title}}</h1>
                 <form @submit.prevent="createJob" class="form">
                     <div v-if="loading" class="preloader">
                         <div class="spinner"></div>
                     </div>
                     <div class="form-group">
                         <label for="title">Title:</label>
-                        <input type="text" id="title" v-model="title" placeholder="Enter your name">
+                        <input type="text" id="title" v-model="job.title" placeholder="Enter your name">
                     </div>
                     <div class="form-group">
                         <label for="location">Location:</label>
-                        <input type="text" id="location" v-model="location" placeholder="Location">
+                        <input type="text" id="location" v-model="job.location" placeholder="Location">
                     </div>
                     <div class="form-group">
                         <label for="expires_on">Expires On</label>
-                        <input type="date" id="expires_on" v-model="expires_on">
+                        <input type="date" id="expires_on" v-model="job.expires_on">
                     </div>
                     <div class="form-group">
                         <label for="bio">Description:</label>
                         <quill-editor
                             placeholder="write description here..."
-                            v-model="description"
+                            v-model:content="job.description"
                             @ready="onEditorReady"
+                            contentType="html"
                             @input="onEditorInput('description', $event)"
                             toolbar="full"
                         />
@@ -37,14 +38,15 @@
                         <label for="bio">Requirements:</label>
                         <quill-editor
                             placeholder="write description here..."
-                            v-model="requirements"
+                            v-model:content="job.requirements"
                             @ready="onEditorReady"
+                            contentType="html"
                             @input="onEditorInput('requirements', $event)"
                             toolbar="full"
                         />
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn-submit">Create a Job</button>
+                        <button type="submit" class="btn-submit">Update</button>
                     </div>
                 </form>
             </section>
@@ -69,13 +71,16 @@ import axios from "axios";
 export default {
     data(){
         return {
-            description:"",
-            title: "",
-            location: "",
-            requirements: "",
-            expires_on: "",
+            // description:"",
+            // title: this.job.title,
+            // location: this.job.location,
+            // requirements: this.job.requirements,
+            // expires_on: "",
             loading: false,
         }
+    },
+    props:{
+        job:{},
     },
     components:{
         QuillEditor
@@ -90,27 +95,35 @@ export default {
         },
         createJob(){
             this.loading = true;
-            console.log(this.requirements)
-            console.log(this.description)
-            axios.post(route('jobs.store'), {
-                description: this.description,
-                location: this.location,
-                requirements: this.requirements,
-                title: this.title,
-                expires_on: this.expires_on,
+            axios.post(route('jobs.update'), {
+                description: this.job.description,
+                location: this.job.location,
+                requirements: this.job.requirements,
+                title: this.job.title,
+                expires_on: this.job.expires_on,
+                id: this.job.id,
             })
                 .then((response) => {
                     console.log(response)
+                    console.log(response.status===200)
+                    if (response.status===200)
+                    {
+                        $toast.success(response.data.message,{
+                            position: 'top-right',
+                            pauseOnHover: true,
+                            hideProgressBar: false,
+                        })
+                    }
+                    console.log(response.statusText)
                 })
                 .catch((error)=>{
                     if (error.response && error.response.status === 422) {
-                        // Handle validation errors
                         $.each(error.response.data.errors,function (key, value) {
-                          $toast.error(value[0],{
-                              position: 'top-right',
-                              pauseOnHover: true,
-                              hideProgressBar: false,
-                          })
+                            $toast.error(value[0],{
+                                position: 'top-right',
+                                pauseOnHover: true,
+                                hideProgressBar: false,
+                            })
                         })
                     } else {
                         console.error(error);
