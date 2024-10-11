@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('expires_on')->nullable();
             $table->boolean('status')->default(true);
             $table->string('slug')->nullable();
+            $table->string('hashedId')->nullable();
             $table->boolean('archive')->default(false);
             $table->timestamps();
         });

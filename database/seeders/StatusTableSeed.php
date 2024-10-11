@@ -30,6 +30,9 @@ class StatusTableSeed extends Seeder
             [
                 'name'=>'Rejected',
             ],
+            [
+                'name'=>'Accepted',
+            ],
         ];
         Status::insert($status);
     }

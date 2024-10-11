@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Jobs\CreateJobRequest;
 use App\Models\Job;
+//use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
+use Hashids\Hashids;
 
 class JobController extends Controller
 {
@@ -42,6 +44,11 @@ class JobController extends Controller
             $job->expires_on = $request->expires_on;
             $job->slug = Str::slug($request->title);
             $job->save();
+            //Hashed
+            $hashids = new Hashids('',10);
+            Job::find($job->id)->update([
+                'hashedId'=>$hashids->encode($job->id),
+            ]);
             DB::commit();
             return response()->json(['message'=>'Successfully added a job']);
         }
