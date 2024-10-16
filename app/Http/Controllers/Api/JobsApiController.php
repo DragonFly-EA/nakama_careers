@@ -12,5 +12,6 @@ class JobsApiController extends Controller
     public function index()
     {
         return Job::all();
+
     }
 }
