@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Illuminate\Http\Request;
-use Vinkla\Hashids\Facades\Hashids;
+use Hashids\Hashids;
 
 class JobsApiController extends Controller
 {
@@ -13,11 +13,12 @@ class JobsApiController extends Controller
     public function index()
     {
         return Job::all();
+
     }
     public function view($id)
     {
-        $ids = Hashids::connection()->decode($id);
+        $hash = new Hashids('',10);
+        $ids = $hash->decode($id)[0];
         return Job::findOrFail($ids);
     }
-    
 }
