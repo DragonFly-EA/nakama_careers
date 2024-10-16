@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('jobs',[JobsApiController::class,'index']);
 Route::get('jobs/{id}',[JobsApiController::class,'view']);
+Route::post('jobs/store',[JobsApiController::class,'store']);
+
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
