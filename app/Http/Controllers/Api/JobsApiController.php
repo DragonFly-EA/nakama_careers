@@ -13,11 +13,11 @@ class JobsApiController extends Controller
     public function index()
     {
         return Job::all();
-
     }
     public function view($id)
     {
         $ids = Hashids::connection()->decode($id);
         return Job::findOrFail($ids);
     }
+    
 }
