@@ -21,4 +21,8 @@ class JobsApiController extends Controller
         $ids = $hash->decode($id)[0];
         return Job::findOrFail($ids);
     }
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }
