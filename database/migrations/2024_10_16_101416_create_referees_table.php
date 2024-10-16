@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('application_id')->constrained();
             $table->string('full_name');
+            $table->string('contact')->nullable();
             $table->boolean('consent')->default(true);
             $table->timestamps();
         });

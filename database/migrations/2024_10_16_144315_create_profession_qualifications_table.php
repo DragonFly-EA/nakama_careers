@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('profession_qualifications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('application_id')->constrained('applications');
-            $table->string('document')->nullable();
             $table->string('grade')->nullable();
-            $table->string('level')->nullable();
+            $table->string('name')->nullable();
             $table->integer('duration')->nullable();
             $table->timestamps();
         });

@@ -16,6 +16,9 @@ return new class extends Migration
             $table->foreignId('application_id')->constrained('applications');
             $table->string('name')->nullable();
             $table->string('document')->nullable();
+            $table->string('grade')->nullable();
+            $table->string('level')->nullable();
+            $table->integer('duration')->nullable();
             $table->timestamps();
         });
     }
