@@ -24,6 +24,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <tr v-for="(application,index) in applications" :key="application.id">
+                                    <td>{{index++}}</td>
+                                    <td>{{application.full_name}}</td>
+                                    <td>{{application.email+'/'+application.phone_number}}</td>
+                                    <td>{{application.job.title}}</td>
+                                    <td>{{application.job.requirements}}</td>
+                                    <td>{{application.created_at}}</td>
+                                    <td>{{application.job.status}}</td>
+                                    <td></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </section>
@@ -39,4 +49,11 @@ import Header from '@/Layouts/Header.vue'
 import {Head} from '@inertiajs/vue3';
 import {Link} from '@inertiajs/vue3';
 import Footer from "@/Layouts/Footer.vue";
+</script>
+<script>
+export default {
+    props:{
+        applications:[],
+    }
+}
 </script>
