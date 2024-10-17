@@ -25,7 +25,7 @@
                                 </thead>
                                 <tbody>
                                 <tr v-for="(application,index) in applications" :key="application.id">
-                                    <td>{{index++}}</td>
+                                    <td>{{index+1}}</td>
                                     <td>{{application.full_name}}</td>
                                     <td>{{application.email+'/'+application.phone_number}}</td>
                                     <td>{{application.job.title}}</td>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('job_id')->constrained('jobs');
+            $table->foreignId('status_id')->constrained('statuses');
             $table->string('full_name')->nullable();
             $table->string('id_no')->nullable();
             $table->string('email')->nullable();
