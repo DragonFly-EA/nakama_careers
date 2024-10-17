@@ -35,6 +35,7 @@ class JobsApiController extends Controller
             // Create and save Application first to get its ID for later use
             $application = new Application();
             $application->job_id = $request->id;
+            $application->status_id = 1;
             $application->full_name = $request->fullname;
             $application->id_no = $request->id_number;
             $application->email = $request->email;
