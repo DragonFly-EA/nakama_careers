@@ -17,7 +17,7 @@
                                     <th>Full name</th>
                                     <th>Email & Phone Number</th>
                                     <th>Job</th>
-                                    <th>Requirements</th>
+                                    <th>Work & years of Experience</th>
                                     <th>Applied on</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -29,7 +29,7 @@
                                     <td>{{application.full_name}}</td>
                                     <td>{{application.email+'/'+application.phone_number}}</td>
                                     <td>{{application.job.title}}</td>
-                                    <td>{{application.job.requirements}}</td>
+                                    <td>{{application.work_experience}}</td>
                                     <td>{{application.created_at}}</td>
                                     <td>{{application.job.status}}</td>
                                     <td></td>
