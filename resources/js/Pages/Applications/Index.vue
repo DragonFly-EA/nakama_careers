@@ -31,8 +31,17 @@
                                     <td>{{application.job.title}}</td>
                                     <td>{{application.work_experience}}</td>
                                     <td>{{application.created_at}}</td>
-                                    <td>{{application.job.status}}</td>
-                                    <td></td>
+                                    <td>{{application.status.name}}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="dropbtn">Dropdown</button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Link 1</a>
+                                                <a href="#">Link 2</a>
+                                                <a href="#">Link 3</a>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -57,3 +66,53 @@ export default {
     }
 }
 </script>
+<style>
+/* Style for the dropdown button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button styling */
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown when hovering over the button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change button color when dropdown is open */
+.dropdown:hover .dropbtn {
+    background-color: #2980b9;
+}
+</style>

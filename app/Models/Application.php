@@ -12,4 +12,8 @@ class Application extends Model
     {
         return $this->belongsTo(Job::class);
     }
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 }
