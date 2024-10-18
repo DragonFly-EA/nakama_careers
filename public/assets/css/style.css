@@ -760,6 +760,10 @@ form {
     }
     .menu-bars{
         display: block;
+        font-size: 20px;
+        color: var(--color1);
+        border: none;
+        background: transparent;
     }
     .container{
         position: relative;
