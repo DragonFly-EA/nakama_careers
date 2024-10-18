@@ -22,6 +22,6 @@ import { Head } from '@inertiajs/vue3';
             </div>
         </div>
 
-        <button class="post-job-btn"><i class="fas fa-plus-circle"></i> Post a Job</button>
+<!--        <button class="post-job-btn"><i class="fas fa-plus-circle"></i> Post a Job</button>-->
     </header>
 </template>

@@ -58,6 +58,7 @@
                     </div>
                 </div>
             </section>
+            <Footer/>
         </main>
     </div>
 </template>
