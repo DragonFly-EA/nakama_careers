@@ -139,6 +139,10 @@ main {
     flex: 1;
     padding: 30px;
     background-color: #F5F8FA;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 .main-header {
@@ -676,4 +680,31 @@ form {
 /* Change button color when dropdown is open */
 .dropdown:hover .dropbtn {
     background-color: var(--color1);
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    main{
+        padding: 20px;
+    }
+    .main-header{
+        margin-bottom: 20px;
+    }
+    .dashboard h1{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .stats-grid{
+        margin-bottom: 10px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .job-views-section{
+        grid-template-columns: 1fr;
+    }
+    .graph-container{
+        height: auto;
+    }
 }
