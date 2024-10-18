@@ -26,37 +26,46 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="(job,index) in jobs" :key="job.id">
-                                    <td>{{index+1}}</td>
-                                    <td>
-                                        <Link :href="route('jobs.view',job.id)">
-                                            {{job.title}}
-                                        </Link>
-                                    </td>
-                                    <td>{{job.location}}</td>
-                                    <td v-html="truncatedData(job.description)"></td>
-                                    <td v-html="truncatedData(job.requirements)"></td>
-                                    <td>{{job.expires_on}}</td>
-                                    <td>
-                                        <template v-if="job.status===1">
-                                            Active
-                                        </template>
-                                        <template v-else>
-                                            Inactive
-                                        </template>
-                                    </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Action<i class="fa fa-caret-down"></i></button>
-                                            <div class="dropdown-content">
-                                                <Link :href="route('jobs.view',job.id)">View</Link>
-                                                <Link :href="route('jobs.edit',job.id)">Edit</Link>
-                                                <a href="#">Archive</a>
-                                                <a href="#">Delete</a>
+                                <template v-if="jobs.length>0">
+                                    <tr v-for="(job,index) in jobs" :key="job.id">
+                                        <td>{{index+1}}</td>
+                                        <td>
+                                            <Link :href="route('jobs.view',job.id)">
+                                                {{job.title}}
+                                            </Link>
+                                        </td>
+                                        <td>{{job.location}}</td>
+                                        <td v-html="truncatedData(job.description)"></td>
+                                        <td v-html="truncatedData(job.requirements)"></td>
+                                        <td>{{job.expires_on}}</td>
+                                        <td>
+                                            <template v-if="job.status===1">
+                                                Active
+                                            </template>
+                                            <template v-else>
+                                                Inactive
+                                            </template>
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">Action<i class="fa fa-caret-down"></i></button>
+                                                <div class="dropdown-content">
+                                                    <Link :href="route('jobs.view',job.id)">View</Link>
+                                                    <Link :href="route('jobs.edit',job.id)">Edit</Link>
+                                                    <a href="#">Archive</a>
+                                                    <a href="#">Delete</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </template>
+                                <template v-else>
+                                    <tr>
+                                        <td colspan="8" style="text-align: center;color: var(--color1)">
+                                            <i class="fa fa-copy fa-5x"></i>
+                                        </td>
+                                    </tr>
+                                </template>
                                 </tbody>
                             </table>
                         </section>

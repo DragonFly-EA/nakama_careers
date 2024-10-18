@@ -16,4 +16,11 @@ class ApplicationController extends Controller
             'applications' => $applications,
         ]);
     }
+    public function view($id)
+    {
+        $application = Application::with('job','status')->find($id);
+        return Inertia::render('Applications/View',[
+            'application' => $application,
+        ]);
+    }
 }

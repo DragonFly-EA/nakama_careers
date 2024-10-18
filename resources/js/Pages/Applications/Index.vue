@@ -14,7 +14,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Full name</th>
+                                    <th>Applicant Name</th>
                                     <th>Email & Phone Number</th>
                                     <th>Job</th>
                                     <th>Work & years of Experience</th>
@@ -24,25 +24,34 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="(application,index) in applications" :key="application.id">
-                                    <td>{{index+1}}</td>
-                                    <td>{{application.full_name}}</td>
-                                    <td>{{application.email+'/'+application.phone_number}}</td>
-                                    <td>{{application.job.title}}</td>
-                                    <td>{{application.work_experience}}</td>
-                                    <td>{{application.created_at}}</td>
-                                    <td>{{application.status.name}}</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="dropbtn">Dropdown</button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Link 1</a>
-                                                <a href="#">Link 2</a>
-                                                <a href="#">Link 3</a>
+                                <template v-if="applications.length>0">
+                                    <tr v-for="(application,index) in applications" :key="application.id">
+                                        <td>{{index+1}}</td>
+                                        <td>{{application.full_name}}</td>
+                                        <td>{{application.email+'/'+application.phone_number}}</td>
+                                        <td>{{application.job.title}}</td>
+                                        <td>{{application.work_experience}}</td>
+                                        <td>{{application.created_at}}</td>
+                                        <td>{{application.status.name}}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">Dropdown</button>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </template>
+                                <template v-else>
+                                    <tr>
+                                        <td colspan="8" style="text-align:center;color: var(--color1)">
+                                            <i class="fa fa-copy fa-5x"></i>
+                                        </td>
+                                    </tr>
+                                </template>
                                 </tbody>
                             </table>
                         </section>
@@ -66,5 +75,3 @@ export default {
     }
 }
 </script>
-<style>
-</style>
