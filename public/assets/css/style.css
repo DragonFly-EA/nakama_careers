@@ -681,6 +681,12 @@ form {
 .dropdown:hover .dropbtn {
     background-color: var(--color1);
 }
+.mobile-card{
+    display: none;
+}
+.desktop-card{
+    display: block;
+}
 
 
 @media only screen and (max-width: 1024px) {
@@ -706,5 +712,14 @@ form {
     }
     .graph-container{
         height: auto;
+    }
+    .card{
+        padding: 0;
+    }
+    .mobile-card{
+        display: block;
+    }
+    .desktop-card{
+        display: none;
     }
 }
