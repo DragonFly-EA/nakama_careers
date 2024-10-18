@@ -11,7 +11,7 @@ class ApplicationController extends Controller
     //
     public function index()
     {
-        $applications = Application::with('job')->orderBy('id')->get();
+        $applications = Application::with('job','status')->orderBy('id')->get();
         return Inertia::render('Applications/Index',[
             'applications' => $applications,
         ]);
