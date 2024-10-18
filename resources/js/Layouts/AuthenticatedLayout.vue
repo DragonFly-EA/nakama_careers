@@ -13,16 +13,18 @@ const currentRoute = window.location.pathname;
 
 <template>
     <aside class="sidebar">
-        <ApplicationLogo></ApplicationLogo>
-        <nav class="sidebar-nav">
-            <ul>
-                <li><Link :href="route('dashboard')"  :class="{'active': currentRoute === '/dashboard'}"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
-                <li><Link :href="route('jobs.index')" :class="{'active': currentRoute==='/jobs'}"><i class="fas fa-list"></i> Jobs</Link></li>
-                <li><Link :href="route('applications.index')" :class="{'active': currentRoute==='/applications'}"><i class="fas fa-table"></i> Applications</Link></li>
-                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
-                <li><Link :href="route('users.index')" :class="{'active':currentRoute==='/users'}"><i class="fas fa-cog"></i> Administration</Link></li>
-            </ul>
-        </nav>
+        <div>
+            <ApplicationLogo></ApplicationLogo>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><Link :href="route('dashboard')"  :class="{'active': currentRoute === '/dashboard'}"><i class="fas fa-tachometer-alt"></i> Dashboard</Link></li>
+                    <li><Link :href="route('jobs.index')" :class="{'active': currentRoute==='/jobs'}"><i class="fas fa-list"></i> Jobs</Link></li>
+                    <li><Link :href="route('applications.index')" :class="{'active': currentRoute==='/applications'}"><i class="fas fa-table"></i> Applications</Link></li>
+                    <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><Link :href="route('users.index')" :class="{'active':currentRoute==='/users'}"><i class="fas fa-cog"></i> Administration</Link></li>
+                </ul>
+            </nav>
+        </div>
         <Link :href="route('logout')" method="post" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</Link>
     </aside>
 </template>
