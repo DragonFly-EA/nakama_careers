@@ -687,7 +687,9 @@ form {
 .desktop-card{
     display: block;
 }
-
+.menu-bars{
+    display: none;
+}
 
 @media only screen and (max-width: 1024px) {
     .sidebar {
@@ -746,3 +748,26 @@ form {
         margin-top:15px
     }
 }
+@media only screen and (max-width: 960px) {
+    .mobile-card ul{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 15px;
+    }
+    .stats-grid{
+        margin-bottom: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .menu-bars{
+        display: block;
+    }
+    .container{
+        position: relative;
+    }
+    .sidebar{
+        position: absolute;
+        top: 60px;
+        display: none;
+    }
+}
+
