@@ -722,4 +722,16 @@ form {
     .desktop-card{
         display: none;
     }
+    .mobile-card ul{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+    }
+    .mobile-card ul li{
+        list-style: none;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 }

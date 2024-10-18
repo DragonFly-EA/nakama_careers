@@ -79,17 +79,17 @@
                         <ul>
                             <template v-if="jobs.length>0">
                                 <li v-for="(job,index) in jobs" :key="job.id">
-                                    <h1>{{ job.title }}</h1>
-                                    <h1>{{ job.location }}</h1>
-                                    <h1>{{ job.expires_on }}</h1>
-                                    <h1>
+                                    <h3><span>Title:</span> {{ job.title }}</h3>
+                                    <h3><span>Location:</span> {{ job.location }}</h3>
+                                    <h3><span>Expires On:</span> {{ job.expires_on }}</h3>
+                                    <h3><span>Status:</span>
                                         <template v-if="job.status===1">
                                             Active
                                         </template>
                                         <template v-else>
                                             Inactive
                                         </template>
-                                    </h1>
+                                    </h3>
                                     <div class="dropdown">
                                         <button class="dropbtn">Action<i class="fa fa-caret-down"></i>
                                         </button>
