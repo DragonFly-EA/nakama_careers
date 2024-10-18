@@ -5,163 +5,165 @@
         </AuthenticatedLayout>
         <!-- Main Content -->
         <main>
-            <Header/>
+            <div>
+                <Header/>
 
-            <section class="dashboard">
-                <h1>Dashboard</h1>
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-content">
-                            <h3>07</h3>
-                            <p>Posted Jobs</p>
+                <section class="dashboard">
+                    <h1>Dashboard</h1>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <h3>07</h3>
+                                <p>Posted Jobs</p>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fa-regular fa-square-full"></i>
+                            </div>
                         </div>
-                        <div class="stat-icon">
-                            <i class="fa-regular fa-square-full"></i>
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <h3>03</h3>
+                                <p>Shortlisted</p>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-content">
-                            <h3>03</h3>
-                            <p>Shortlisted</p>
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <h3>1.7k</h3>
+                                <p>Applications</p>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fa fa-eye"></i>
+                            </div>
                         </div>
-                        <div class="stat-icon">
-                            <i class="fa-regular fa-bookmark"></i>
-                        </div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-content">
-                            <h3>1.7k</h3>
-                            <p>Applications</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fa fa-eye"></i>
-                        </div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-content">
-                            <h3>04</h3>
-                            <p>Saved Candidates</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="job-views-section">
-                    <!-- Job Views Graph Section -->
-                    <div class="job-views">
-                        <h2>Job Views</h2>
-                        <div class="job-views-filter">
-                            <label for="job-select">Jobs:</label>
-                            <select id="job-select">
-                                <option>Web & Mobile Prototype designer...</option>
-                            </select>
-                        </div>
-                        <div class="graph-container">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <h3>04</h3>
+                                <p>Saved Candidates</p>
+                            </div>
+                            <div class="stat-icon">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Posted Job Section -->
-                    <div class="posted-jobs">
-                        <h2>Posted Jobs</h2>
-                        <ul>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Web & Mobile Prototype</strong>
-                                    <span>Fulltime - Spain</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Document Writer</strong>
-                                    <span>Part-time - Italy</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Outbound Call Service</strong>
-                                    <span>Fulltime - USA</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Product Designer</strong>
-                                    <span>Part-time - Dubai</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Marketing Specialist</strong>
-                                    <span>Part-time - UK</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="job-views-section">
+                    <div class="job-views-section">
+                        <!-- Job Views Graph Section -->
+                        <div class="job-views">
+                            <h2>Job Views</h2>
+                            <div class="job-views-filter">
+                                <label for="job-select">Jobs:</label>
+                                <select id="job-select">
+                                    <option>Web & Mobile Prototype designer...</option>
+                                </select>
+                            </div>
+                            <div class="graph-container">
+                            </div>
+                        </div>
 
-                    <!-- Posted Job Section -->
-                    <div class="posted-jobs">
-                        <h2>Posted Jobs</h2>
-                        <ul>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Web & Mobile Prototype</strong>
-                                    <span>Fulltime - Spain</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Document Writer</strong>
-                                    <span>Part-time - Italy</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Outbound Call Service</strong>
-                                    <span>Fulltime - USA</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Product Designer</strong>
-                                    <span>Part-time - Dubai</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <div class="job-info">
-                                    <strong>Marketing Specialist</strong>
-                                    <span>Part-time - UK</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Job Views Graph Section -->
-                    <div class="job-views">
-                        <h2>Job Views</h2>
-                        <div class="job-views-filter">
-                            <label for="job-select">Jobs:</label>
-                            <select id="job-select">
-                                <option>Web & Mobile Prototype designer...</option>
-                            </select>
-                        </div>
-                        <div class="graph-container">
-                            <canvas id="jobViewsChart"></canvas>
+                        <!-- Posted Job Section -->
+                        <div class="posted-jobs">
+                            <h2>Posted Jobs</h2>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Web & Mobile Prototype</strong>
+                                        <span>Fulltime - Spain</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Document Writer</strong>
+                                        <span>Part-time - Italy</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Outbound Call Service</strong>
+                                        <span>Fulltime - USA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Product Designer</strong>
+                                        <span>Part-time - Dubai</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Marketing Specialist</strong>
+                                        <span>Part-time - UK</span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="job-views-section">
+
+                        <!-- Posted Job Section -->
+                        <div class="posted-jobs">
+                            <h2>Posted Jobs</h2>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Web & Mobile Prototype</strong>
+                                        <span>Fulltime - Spain</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Document Writer</strong>
+                                        <span>Part-time - Italy</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Outbound Call Service</strong>
+                                        <span>Fulltime - USA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Product Designer</strong>
+                                        <span>Part-time - Dubai</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="job-info">
+                                        <strong>Marketing Specialist</strong>
+                                        <span>Part-time - UK</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Job Views Graph Section -->
+                        <div class="job-views">
+                            <h2>Job Views</h2>
+                            <div class="job-views-filter">
+                                <label for="job-select">Jobs:</label>
+                                <select id="job-select">
+                                    <option>Web & Mobile Prototype designer...</option>
+                                </select>
+                            </div>
+                            <div class="graph-container">
+                                <canvas id="jobViewsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <Footer/>
         </main>
     </div>
