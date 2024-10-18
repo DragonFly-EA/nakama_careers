@@ -30,7 +30,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     color: #3d3d3d;
 }
 
@@ -324,7 +324,7 @@ main {
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 10px 0;
     border-radius: 15px;
 }
 .card{
