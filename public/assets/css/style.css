@@ -768,6 +768,7 @@ form {
         position: absolute;
         top: 60px;
         display: none;
+        z-index: 10;
     }
 }
 
