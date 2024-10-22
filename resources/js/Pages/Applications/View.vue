@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <ul class="attachments-list">
                                 <li v-for="(attachment,index) in application.attachments">
-                                    <a :href="'/storage/'+application.document" target="_blank">
+                                    <a :href="'/storage/'+attachment.document" target="_blank">
                                         <i class="fa fa-file-pdf fa-2x"></i>
                                         {{attachment.level}}
                                     </a>
