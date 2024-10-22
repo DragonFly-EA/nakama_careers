@@ -4,31 +4,33 @@
         <AuthenticatedLayout>
         </AuthenticatedLayout>
         <main>
-            <Header/>
-            <section class="dashboard">
-                <div class="card">
-                    <div class="card-body">
-                        <h3>Applicant Name: {{application.full_name}}</h3>
-                        <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
-                        <h3>Gender: {{application.gender}}</h3>
-                        <h3>Job Title: {{application.job.title}}</h3>
-                        <h3>years Of Experience: {{application.years_of_experience}}</h3>
-                        <h3>Status: {{application.status.name}}</h3>
-                        <p>Work Experience: {{application.work_experience}}</p>
+            <div>
+                <Header/>
+                <section class="dashboard">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Applicant Name: {{application.full_name}}</h3>
+                            <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
+                            <h3>Gender: {{application.gender}}</h3>
+                            <h3>Job Title: {{application.job.title}}</h3>
+                            <h3>years Of Experience: {{application.years_of_experience}}</h3>
+                            <h3>Status: {{application.status.name}}</h3>
+                            <p>Work Experience: {{application.work_experience}}</p>
+                        </div>
                     </div>
-                </div>
-                <h1>Application Attachments</h1>
-                <div class="card">
-                    <div class="card-body">
-                        <ul>
-                            <li v-for="(attachment,index) in application.attachments">
-                                <i class="fa fa-file-pdf fa-5x"></i>
-                                {{attachment.level}}
-                            </li>
-                        </ul>
+                    <h1>Application Attachments</h1>
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="attachments-list">
+                                <li v-for="(attachment,index) in application.attachments">
+                                    <i class="fa fa-file-pdf fa-5x"></i>
+                                    {{attachment.level}}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
             <Footer/>
         </main>
     </div>

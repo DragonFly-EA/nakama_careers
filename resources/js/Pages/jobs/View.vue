@@ -4,16 +4,19 @@
         <AuthenticatedLayout>
         </AuthenticatedLayout>
         <main>
-            <Header/>
-            <section class="dashboard">
-                <h1>{{job.title}}</h1>
-                <div class="card">
-                    <div class="card-body">
-                        <span v-html="job.description"></span>
-                        <span v-html="job.requirements"></span>
+            <div>
+                <Header/>
+                <section class="dashboard">
+                    <h1>{{job.title}}</h1>
+                    <div class="card">
+                        <div class="card-body">
+                            <span v-html="job.description"></span>
+                            <span v-html="job.requirements"></span>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
+            <Footer/>
         </main>
     </div>
 </template>
