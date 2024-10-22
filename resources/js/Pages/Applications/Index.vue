@@ -29,7 +29,11 @@
                                         <template v-if="applications.length>0">
                                             <tr v-for="(application,index) in applications" :key="application.id">
                                                 <td>{{index+1}}</td>
-                                                <td>{{application.full_name}}</td>
+                                                <td>
+                                                    <Link :href="route('applications.view',application.id)">
+                                                        {{application.full_name}}
+                                                    </Link>
+                                                </td>
                                                 <td>{{application.email+'/'+application.phone_number}}</td>
                                                 <td>{{application.job.title}}</td>
                                                 <td>{{application.work_experience}}</td>
@@ -37,11 +41,11 @@
                                                 <td>{{application.status.name}}</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="dropbtn">Dropdown</button>
+                                                        <button class="dropbtn">Action</button>
                                                         <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
+                                                            <Link :href="route('applications.view',application.id)">View</Link>
+                                                            <a href="#">Update</a>
+                                                            <a href="#">Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -73,7 +77,7 @@
                                         <button class="dropbtn">Action<i class="fa fa-caret-down"></i>
                                         </button>
                                         <div class="dropdown-content">
-                                            <Link :href="route('jobs.view',application.id)">View</Link>
+                                            <Link :href="route('applications.view',application.id)">View</Link>
                                             <a href="#">Archive</a>
                                             <a href="#">Delete</a>
                                         </div>
