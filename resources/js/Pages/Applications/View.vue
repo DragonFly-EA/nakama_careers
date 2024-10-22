@@ -5,6 +5,20 @@
         </AuthenticatedLayout>
         <main>
             <Header/>
+            <section class="dashboard">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Applicant Name: {{application.full_name}}</h3>
+                        <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
+                        <h3>Gender: {{application.gender}}</h3>
+                        <h3>Job Title: {{application.job.title}}</h3>
+                        <h3>years Of Experience: {{application.years_of_experience}}</h3>
+                        <p>Work Experience: {{application.work_experince}}</p>
+                        <h3>Status: {{application.status.name}}</h3>
+                    </div>
+                </div>
+            </section>
+            <Footer/>
         </main>
     </div>
 </template>
@@ -18,7 +32,7 @@ import Footer from "@/Layouts/Footer.vue";
 <script>
 export default {
     props: {
-        applications: [],
+        application: [],
     }
 }
 </script>
