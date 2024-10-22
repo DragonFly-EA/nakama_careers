@@ -60,7 +60,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mobile-card"></div>
+                    <div class="mobile-card">
+                        <ul>
+                            <template v-if="applications.length>0">
+                                <li v-for="(application,index) in applications" :key="application.id">
+                                    <h3>Applicant Name: {{application.full_name}}</h3>
+                                    <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
+                                    <h3>Job Title: {{application.email+'/'+application.phone_number}}</h3>
+                                    <h3>Applied on: {{application.created_at}}</h3>
+                                    <h3>Status: {{application.created_at}}</h3>
+                                    <div class="dropdown">
+                                        <button class="dropbtn">Action<i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="dropdown-content">
+                                            <Link :href="route('jobs.view',application.id)">View</Link>
+                                            <a href="#">Archive</a>
+                                            <a href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                            <template v-else>
+                                <li>
+                                    <h3>No Applications</h3>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
                 </section>
             </div>
             <Footer/>
