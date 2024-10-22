@@ -18,7 +18,7 @@ class ApplicationController extends Controller
     }
     public function view($id)
     {
-        $application = Application::with('job','status')->find($id);
+        $application = Application::with('job','status','attachments')->find($id);
         return Inertia::render('Applications/View',[
             'application' => $application,
         ]);

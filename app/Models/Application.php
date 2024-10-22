@@ -16,4 +16,8 @@ class Application extends Model
     {
         return $this->belongsTo(Status::class);
     }
+    public function attachments()
+    {
+        return $this->hasMany(ApplicationAttachment::class);
+    }
 }

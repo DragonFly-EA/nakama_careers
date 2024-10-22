@@ -17,6 +17,16 @@
                         <p>Work Experience: {{application.work_experience}}</p>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="(attachment,index) in application.attachments">
+                                <i class="fa fa-file-pdf"></i>
+                                {{attachment.level}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             <Footer/>
         </main>
