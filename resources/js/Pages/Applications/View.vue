@@ -17,11 +17,12 @@
                         <p>Work Experience: {{application.work_experience}}</p>
                     </div>
                 </div>
+                <h1>Application Attachments</h1>
                 <div class="card">
                     <div class="card-body">
                         <ul>
                             <li v-for="(attachment,index) in application.attachments">
-                                <i class="fa fa-file-pdf"></i>
+                                <i class="fa fa-file-pdf fa-5x"></i>
                                 {{attachment.level}}
                             </li>
                         </ul>
