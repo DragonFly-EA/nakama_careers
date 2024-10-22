@@ -8,6 +8,7 @@ use App\Models\ApplicationAttachment;
 use App\Models\Job;
 use App\Models\ProfessionQualification;
 use App\Models\Referee;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,7 @@ class JobsApiController extends Controller
             // Create and save Application
             $application = new Application();
             $application->job_id = $request->id;
-            $application->status_id = 1;
+            $application->status_id = Status::STATUS_PENDING;
             $application->full_name = $request->fullname;
             $application->id_no = $request->id_number;
             $application->email = $request->email;
