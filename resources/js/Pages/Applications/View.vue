@@ -14,7 +14,7 @@
                             <h3>Gender: {{application.gender}}</h3>
                             <h3>Job Title: {{application.job.title}}</h3>
                             <h3>years Of Experience: {{application.years_of_experience}}</h3>
-                            <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class">{{application.status.name}}</span></h3>
+                            <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class" :style="'background-color:' +application.status.color">{{application.status.name}}</span></h3>
                             <p>Work Experience: {{application.work_experience}}</p>
                         </div>
                     </div>
