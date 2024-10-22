@@ -92,7 +92,7 @@ class JobsApiController extends Controller
             ProfessionQualification::insert($qualificationsData);
 
             DB::commit();
-            return response()->json(['message' => 'Successfully created application'], 200);
+            return response()->json(['message' => 'Successfully created application','status'=>200], 200);
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json(['error' => $e->getMessage()], 500);
