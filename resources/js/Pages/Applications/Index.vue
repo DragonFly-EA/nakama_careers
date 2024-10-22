@@ -37,7 +37,7 @@
                                                 <td>{{application.email+'/'+application.phone_number}}</td>
                                                 <td>{{application.job.title}}</td>
                                                 <td>{{application.work_experience}}</td>
-                                                <td>{{application.created_at}}</td>
+                                                <td>{{formatDate(application.created_at)}}</td>
                                                 <td>{{application.status.name}}</td>
                                                 <td>
                                                     <div class="dropdown">
@@ -71,7 +71,7 @@
                                     <h3>Applicant Name: {{application.full_name}}</h3>
                                     <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
                                     <h3>Job Title: {{application.email+'/'+application.phone_number}}</h3>
-                                    <h3>Applied on: {{application.created_at}}</h3>
+                                    <h3>Applied on: {{formatDate(application.created_at)}}</h3>
                                     <h3>Status: {{application.created_at}}</h3>
                                     <div class="dropdown">
                                         <button class="dropbtn">Action<i class="fa fa-caret-down"></i>
@@ -108,6 +108,17 @@ import Footer from "@/Layouts/Footer.vue";
 export default {
     props:{
         applications:[],
+    },
+    methods:{
+        formatDate(dates) {
+            const final_dates = new Date(dates);
+            return new Intl.DateTimeFormat('en-US', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            }).format(final_dates)
+        }
     }
 }
 </script>
