@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <ul class="attachments-list">
                                 <li v-for="(attachment,index) in application.attachments">
-                                    <i class="fa fa-file-pdf fa-5x"></i>
+                                    <i class="fa fa-file-pdf fa-2x"></i>
                                     {{attachment.level}}
                                 </li>
                             </ul>

@@ -690,6 +690,9 @@ form {
 .menu-bars{
     display: none;
 }
+.attachments-list li{
+    list-style: none;
+}
 
 @media only screen and (max-width: 1024px) {
     .sidebar {
