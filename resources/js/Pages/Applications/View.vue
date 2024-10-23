@@ -9,27 +9,36 @@
                 <section class="dashboard">
                     <h1>Application Details</h1>
                     <div class="card">
-                        <div class="card-body">
-                            <h3>Applicant Name: {{application.full_name}}</h3>
-                            <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
-                            <h3>Gender: {{application.gender}}</h3>
-                            <h3>Job Title: {{application.job.title}}</h3>
-                            <h3>years Of Experience: {{application.years_of_experience}}</h3>
-                            <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class" :style="'background-color:' +application.status.color">{{application.status.name}}</span></h3>
-                            <p>Work Experience: {{application.work_experience}}</p>
+                        <div class="card-body card-size">
+                            <div>
+                                <h3>Applicant Name: {{ application.full_name }}</h3>
+                                <h3>Email & Phone No: {{ application.email + '/' + application.phone_number }}</h3>
+                                <h3>Gender: {{ application.gender }}</h3>
+                                <h3>Job Title: {{ application.job.title }}</h3>
+                                <h3>years Of Experience: {{ application.years_of_experience }}</h3>
+                                <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class"
+                                                                                                   :style="'background-color:' +application.status.color">{{
+                                        application.status.name
+                                    }}</span>
+                                </h3>
+                                <p>Work Experience: {{ application.work_experience }}</p>
+                            </div>
+                            <div>
+                                <ul class="attachments-list">
+                                    <li v-for="(attachment,index) in application.attachments">
+                                        <a :href="'/storage/'+attachment.document" target="_blank">
+                                            <i class="fa fa-file-pdf fa-2x"></i>
+                                            {{ attachment.level }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <h1>Application Attachments</h1>
                     <div class="card">
                         <div class="card-body">
-                            <ul class="attachments-list">
-                                <li v-for="(attachment,index) in application.attachments">
-                                    <a :href="'/storage/'+attachment.document" target="_blank">
-                                        <i class="fa fa-file-pdf fa-2x"></i>
-                                        {{attachment.level}}
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
                 </section>
