@@ -701,6 +701,14 @@ form {
     border: none;
     border-radius: 30px;
 }
+.card-size{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.card-size div:nth-child(1){
+    border-right: 1px solid var(--color1);
+}
 
 @media only screen and (max-width: 1024px) {
     .sidebar {
@@ -760,6 +768,15 @@ form {
     }
 }
 @media only screen and (max-width: 960px) {
+    .card-size{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .card-size div:nth-child(1){
+        border-right: 1px solid var(--color1);
+        border: none;
+    }
     .mobile-card ul{
         display: grid;
         grid-template-columns: repeat(1,1fr);
