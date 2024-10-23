@@ -38,7 +38,12 @@
                                                 <td>{{application.job.title}}</td>
                                                 <td>{{application.work_experience}}</td>
                                                 <td>{{formatDate(application.created_at)}}</td>
-                                                <td>{{application.status.name}}</td>
+                                                <td>
+                                                    <span class="status-class"
+                                                          :style="'background-color:' +application.status.color">
+                                                        {{application.status.name}}
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button class="dropbtn">Action</button>
@@ -55,6 +60,7 @@
                                             <tr>
                                                 <td colspan="8" style="text-align:center;color: var(--color1)">
                                                     <i class="fa fa-copy fa-5x"></i>
+                                                    <p>No Applications</p>
                                                 </td>
                                             </tr>
                                         </template>
@@ -85,7 +91,8 @@
                                 </li>
                             </template>
                             <template v-else>
-                                <li>
+                                <li style="text-align: center">
+                                    <i class="fa fa-copy fa-5x"></i>
                                     <h3>No Applications</h3>
                                 </li>
                             </template>
