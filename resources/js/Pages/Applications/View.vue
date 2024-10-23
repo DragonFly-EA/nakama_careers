@@ -7,6 +7,7 @@
             <div>
                 <Header/>
                 <section class="dashboard">
+                    <h1>Application Details</h1>
                     <div class="card">
                         <div class="card-body">
                             <h3>Applicant Name: {{application.full_name}}</h3>
