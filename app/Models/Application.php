@@ -20,4 +20,12 @@ class Application extends Model
     {
         return $this->hasMany(ApplicationAttachment::class);
     }
+    public function referees()
+    {
+        return $this->hasMany(Referee::class);
+    }
+    public function qualifications()
+    {
+        return $this->hasMany(ProfessionQualification::class);
+    }
 }

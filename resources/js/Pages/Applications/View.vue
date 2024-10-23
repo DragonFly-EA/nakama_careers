@@ -35,6 +35,26 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div>
+                                <h1 style="margin-bottom: 10px;">Referees</h1>
+                                <ul>
+                                    <li v-for="(referee,index) in application.referees">
+                                        <h3>Fullname: {{referee.full_name}}</h3>
+                                        <h3>Contact: {{referee.contact}}</h3>
+                                        <h3>Consent: {{referee.consent}}</h3>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h1 style="margin-bottom: 10px;">Professional Qualification </h1>
+                                <ul>
+                                    <li v-for="qualification in application.qualifications">
+                                        <h3>Name: {{qualification.name}}</h3>
+                                        <h3>Year Completed: {{qualification.duration}}</h3>
+                                        <h3>Grade: {{qualification.grade}}</h3>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
