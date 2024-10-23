@@ -56,8 +56,8 @@
                                 </ul>
                             </div>
                             <div>
-                                <button class="dropbtn">Reject</button>
-                                <button class="dropbtn">Schedule For Interview</button>
+                                <button class="dropbtn" style="background-color:#DC3545">Reject</button>
+                                <button class="dropbtn" style="background-color:#17A2B8">Schedule For Interview</button>
                             </div>
                         </div>
                     </div>
