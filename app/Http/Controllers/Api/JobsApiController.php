@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Application;
 use App\Models\ApplicationAttachment;
+use App\Models\ApplicationTrack;
 use App\Models\Job;
 use App\Models\ProfessionQualification;
 use App\Models\Referee;
 use App\Models\Status;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\DB;
@@ -90,6 +92,13 @@ class JobsApiController extends Controller
                 ];
             }
             ProfessionQualification::insert($qualificationsData);
+            //Application Track
+            $track  = new ApplicationTrack();
+            $track->application_id = $application->id;
+            $track->status_id = Status::STATUS_PENDING;
+            $track->user_id = User::first()->id;
+            $track->notes = 'A new job application from '.$application->full_name.' has been send to the application for the position of '.$application->job->title;
+            $track->save();
 
             DB::commit();
             return response()->json(['message' => 'Successfully created application','status'=>200], 200);
