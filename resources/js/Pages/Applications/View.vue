@@ -56,8 +56,8 @@
                                 </ul>
                             </div>
                             <div>
-                                <button class="dropbtn" style="background-color:#DC3545">Reject</button>
-                                <button class="dropbtn" style="background-color:#17A2B8">Schedule For Interview</button>
+                                <button class="dropbtn" @click="rejectApplication()" style="background-color:#DC3545;margin-right: 20px">Reject</button>
+                                <button class="dropbtn" @click="scheduleInterview()" style="background-color:#17A2B8">Schedule For Interview</button>
                             </div>
                         </div>
                     </div>
@@ -78,6 +78,14 @@ import Footer from "@/Layouts/Footer.vue";
 export default {
     props: {
         application: [],
+    },
+    methods:{
+        rejectApplication(){
+            console.log('app');
+        },
+        scheduleInterview(){
+            console.log('app');
+        },
     }
 }
 </script>
