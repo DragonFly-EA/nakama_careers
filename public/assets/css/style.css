@@ -692,6 +692,18 @@ form {
 }
 .attachments-list li{
     list-style: none;
+    padding-bottom: 10px;
+}
+.attachments-list li a{
+    text-decoration: none;
+    color: #333;
+}
+.attachments-list li a i{
+    color: var(--color1);
+}
+.attachments-list li a:hover{
+    color: var(--color1);
+    text-decoration: underline;
 }
 .status-class{
     /*background-color: var(--color1);*/

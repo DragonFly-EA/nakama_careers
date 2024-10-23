@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-body card-size">
                             <div>
-                                <h1>Applicant Details</h1>
+                                <h1 style="margin-bottom: 10px;">Applicant Details</h1>
                                 <h3>Applicant Name: {{ application.full_name }}</h3>
                                 <h3>Email & Phone No: {{ application.email + '/' + application.phone_number }}</h3>
                                 <h3>Gender: {{ application.gender }}</h3>
@@ -25,7 +25,7 @@
                                 <p>Work Experience: {{ application.work_experience }}</p>
                             </div>
                             <div>
-                                <h1>Academic Attachments</h1>
+                                <h1 style="margin-bottom: 10px;">Academic Attachments</h1>
                                 <ul class="attachments-list">
                                     <li v-for="(attachment,index) in application.attachments">
                                         <a :href="'/storage/'+attachment.document" target="_blank">
