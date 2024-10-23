@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -22,5 +23,12 @@ class ApplicationController extends Controller
         return Inertia::render('Applications/View',[
             'application' => $application,
         ]);
+    }
+    public function reject($id)
+    {
+        $application = Application::find($id);
+        $application->status_id = Status::STATUS_REJECTED;
+        $application->push();
+        return response()->json(['message'=>'Application Rejected']);
     }
 }

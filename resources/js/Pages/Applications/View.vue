@@ -56,8 +56,8 @@
                                 </ul>
                             </div>
                             <div>
-                                <button class="dropbtn" @click="rejectApplication()" style="background-color:#DC3545;margin-right: 20px">Reject</button>
-                                <button class="dropbtn" @click="scheduleInterview()" style="background-color:#17A2B8">Schedule For Interview</button>
+                                <button class="dropbtn" @click="rejectApplication(application.id)" style="background-color:#DC3545;margin-right: 20px">Reject</button>
+                                <button class="dropbtn" @click="scheduleInterview(application.id)" style="background-color:#17A2B8">Schedule For Interview</button>
                             </div>
                         </div>
                     </div>
@@ -75,16 +75,23 @@ import {Link} from '@inertiajs/vue3';
 import Footer from "@/Layouts/Footer.vue";
 </script>
 <script>
+import axios  from "axios";
 export default {
     props: {
         application: [],
     },
     methods:{
-        rejectApplication(){
-            console.log('app');
+        rejectApplication(id){
+            axios.put('/applications/reject/'+id)
+                .then((response)=>{
+                    console.log(response)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
         },
-        scheduleInterview(){
-            console.log('app');
+        scheduleInterview(id){
+            console.log(id);
         },
     }
 }
