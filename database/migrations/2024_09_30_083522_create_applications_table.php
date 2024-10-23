@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('language')->nullable();
             $table->boolean('notify_hr')->default(false);
+            $table->boolean('review')->default(false);
             $table->boolean('notify_applicant')->default(false);
             $table->integer('years_of_experience')->nullable();
             $table->longText('work_experience')->nullable();

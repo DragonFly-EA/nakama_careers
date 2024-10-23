@@ -55,6 +55,10 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div>
+                                <button class="dropbtn">Reject</button>
+                                <button class="dropbtn">Schedule For Interview</button>
+                            </div>
                         </div>
                     </div>
                 </section>

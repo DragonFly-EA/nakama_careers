@@ -48,7 +48,7 @@
                                                     <div class="dropdown">
                                                         <button class="dropbtn">Action</button>
                                                         <div class="dropdown-content">
-                                                            <Link :href="route('applications.view',application.id)">View</Link>
+                                                            <Link :href="route('applications.view',application.id)">Review</Link>
                                                             <a href="#">Update</a>
                                                             <a href="#">Delete</a>
                                                         </div>
@@ -78,12 +78,15 @@
                                     <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
                                     <h3>Job Title: {{application.email+'/'+application.phone_number}}</h3>
                                     <h3>Applied on: {{formatDate(application.created_at)}}</h3>
-                                    <h3>Status: {{application.created_at}}</h3>
+                                    <h3>Status: <span class="status-class"
+                                                      :style="'background-color:' +application.status.color">
+                                                        {{application.status.name}}
+                                                    </span></h3>
                                     <div class="dropdown">
                                         <button class="dropbtn">Action<i class="fa fa-caret-down"></i>
                                         </button>
                                         <div class="dropdown-content">
-                                            <Link :href="route('applications.view',application.id)">View</Link>
+                                            <Link :href="route('applications.view',application.id)">Review</Link>
                                             <a href="#">Archive</a>
                                             <a href="#">Delete</a>
                                         </div>
