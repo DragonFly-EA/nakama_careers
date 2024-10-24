@@ -20,6 +20,12 @@ class ApplicationController extends Controller
     public function view($id)
     {
         $application = Application::with('job','status','attachments','referees','qualifications')->find($id);
+        if ($application->review===0)
+        {
+            $application->review = 1;
+            $application->status_id=Status::STATUS_REVIEW;
+            $application->save();
+        }
         return Inertia::render('Applications/View',[
             'application' => $application,
         ]);
