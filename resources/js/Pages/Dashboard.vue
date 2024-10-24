@@ -13,7 +13,7 @@
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-content">
-                                <h3>07</h3>
+                                <h3>{{jobs}}</h3>
                                 <p>Posted Jobs</p>
                             </div>
                             <div class="stat-icon">
@@ -31,7 +31,7 @@
                         </div>
                         <div class="stat-box">
                             <div class="stat-content">
-                                <h3>1.7k</h3>
+                                <h3>{{formatNumber(applications)}}</h3>
                                 <p>Applications</p>
                             </div>
                             <div class="stat-icon">
@@ -40,8 +40,8 @@
                         </div>
                         <div class="stat-box">
                             <div class="stat-content">
-                                <h3>04</h3>
-                                <p>Saved Candidates</p>
+                                <h3>{{accepted}}</h3>
+                                <p>Accepted Candidates</p>
                             </div>
                             <div class="stat-icon">
                                 <i class="fa-regular fa-pen-to-square"></i>
@@ -180,7 +180,9 @@ import Footer from "@/Layouts/Footer.vue";
 
 export default {
     props: {
-
+        jobs:"",
+        accepted: "",
+        applications:"",
     },
     mounted() {
       //  this.radarChart();
@@ -190,6 +192,9 @@ export default {
         //this.bubbleChart();
     },
     methods: {
+        formatNumber(value) {
+            return new Intl.NumberFormat('en', { notation: 'compact', compactDisplay: 'short' }).format(value);
+        },
         lineChart(){
             const ctx = document.getElementById('jobViewsChart').getContext('2d');
             const jobViewsChart = new Chart(ctx, {
