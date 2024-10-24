@@ -22,7 +22,7 @@
                         </div>
                         <div class="stat-box">
                             <div class="stat-content">
-                                <h3>03</h3>
+                                <h3>{{shortlisted}}</h3>
                                 <p>Shortlisted</p>
                             </div>
                             <div class="stat-icon">
@@ -183,6 +183,7 @@ export default {
         jobs:"",
         accepted: "",
         applications:"",
+        shortlisted:"",
     },
     mounted() {
       //  this.radarChart();

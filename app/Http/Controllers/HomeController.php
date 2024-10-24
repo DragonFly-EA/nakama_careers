@@ -16,10 +16,12 @@ class HomeController extends Controller
         $jobs = Job::count();
         $accepted = Application::where('status_id',Status::STATUS_ACCEPTED)->count();
         $applications = Application::count();
+        $shortlisted = Application::where('status_id',Status::STATUS_SCHEDULED)->count();
         return Inertia::render('Dashboard',[
             'jobs' => $jobs,
             'accepted' => $accepted,
-            'applications' => $applications
+            'applications' => $applications,
+            'shortlisted' => $shortlisted
         ]);
     }
 }
