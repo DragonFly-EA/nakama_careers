@@ -69,14 +69,14 @@
                                 </section>
                             </div>
                         </div>
-                    </div>
+                    </div>Applicant Name
                     <div class="mobile-card">
                         <ul>
                             <template v-if="applications.length>0">
                                 <li v-for="(application,index) in applications" :key="application.id">
                                     <h3>Applicant Name: {{application.full_name}}</h3>
                                     <h3>Email & Phone No: {{application.email+'/'+application.phone_number}}</h3>
-                                    <h3>Job Title: {{application.email+'/'+application.phone_number}}</h3>
+                                    <h3>Job Title: {{application.job.title}}</h3>
                                     <h3>Applied on: {{formatDate(application.created_at)}}</h3>
                                     <h3>Status: <span class="status-class"
                                                       :style="'background-color:' +application.status.color">
