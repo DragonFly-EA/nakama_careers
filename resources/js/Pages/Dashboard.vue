@@ -13,7 +13,7 @@
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-content">
-                                <h3>{{jobs}}</h3>
+                                <h3>{{jobsCount}}</h3>
                                 <p>Posted Jobs</p>
                             </div>
                             <div class="stat-icon">
@@ -56,7 +56,9 @@
                             <div class="job-views-filter">
                                 <label for="job-select">Jobs:</label>
                                 <select id="job-select">
-                                    <option>Web & Mobile Prototype designer...</option>
+                                    <template v-for="job in jobs" :key="job.id">
+                                        <option :value="job.id">{{job.title}}</option>
+                                    </template>
                                 </select>
                             </div>
                             <div class="graph-container">
@@ -180,7 +182,8 @@ import Footer from "@/Layouts/Footer.vue";
 
 export default {
     props: {
-        jobs:"",
+        jobsCount:"",
+        jobs:[],
         accepted: "",
         applications:"",
         shortlisted:"",

@@ -13,15 +13,17 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $jobs = Job::count();
+        $jobsCount = Job::count();
+        $jobs = Job::orderBy('created_at', 'desc')->take(5)->get(['id','title','location']);
         $accepted = Application::where('status_id',Status::STATUS_ACCEPTED)->count();
         $applications = Application::count();
         $shortlisted = Application::where('status_id',Status::STATUS_SCHEDULED)->count();
         return Inertia::render('Dashboard',[
-            'jobs' => $jobs,
+            'jobsCount' => $jobsCount,
             'accepted' => $accepted,
             'applications' => $applications,
-            'shortlisted' => $shortlisted
+            'shortlisted' => $shortlisted,
+            'jobs'=>$jobs
         ]);
     }
 }
