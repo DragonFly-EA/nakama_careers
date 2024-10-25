@@ -29,7 +29,11 @@ class HomeController extends Controller
     }
     public function view($id)
     {
-        $views = JobView::where('job_id',$id)->count();
+        $views = JobView::where('job_id', $id)
+            ->selectRaw('MONTH(created_at) as month, COUNT(*) as view_count')
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get();
         return response()->json(['views'=>$views]);
     }
 }

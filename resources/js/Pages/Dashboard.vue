@@ -112,6 +112,11 @@ export default {
         applications:"",
         shortlisted:"",
     },
+    data(){
+        return {
+            jobViewsChart: null,
+        }
+    },
     mounted() {
       //  this.radarChart();
         // this.barChart();
@@ -122,20 +127,40 @@ export default {
     methods: {
         jobViews(){
             let id = (this.$refs.job_select.value);
-            console.log(id);
+            axios.get(`/jobsViews/${id}`)
+                .then(response => {
+                    const monthlyData = response.data.views;
+                    const labels = [];
+                    const data = [];
+
+                    // Loop through each month and populate labels and data
+                    for (let i = 1; i <= 12; i++) {
+                        const monthData = monthlyData.find(item => item.month === i);
+                        labels.push(new Date(0, i - 1).toLocaleString('default', { month: 'short' }));
+                        data.push(monthData ? monthData.view_count : 0);
+                    }
+
+                    // Update chart data
+                    this.jobViewsChart.data.labels = labels;
+                    this.jobViewsChart.data.datasets[0].data = data;
+                    this.jobViewsChart.update();
+                })
+                .catch(error => {
+                    console.error('Error fetching job views:', error);
+                });
         },
         formatNumber(value) {
             return new Intl.NumberFormat('en', { notation: 'compact', compactDisplay: 'short' }).format(value);
         },
         lineChart(){
             const ctx = document.getElementById('jobViewsChart').getContext('2d');
-            const jobViewsChart = new Chart(ctx, {
+            this.jobViewsChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                    labels: [],  // Will be set dynamically
                     datasets: [{
                         label: 'Job Views',
-                        data: [50, 100, 200, 150, 250, 150, 100],
+                        data: [],  // Will be set dynamically
                         fill: true,
                         backgroundColor: 'rgba(85, 230, 115, 0.2)',
                         borderColor: '#55E673',
