@@ -116,6 +116,6 @@ class JobsApiController extends Controller
         $view->job_id = $ids;
         $view->count = 1;
         $view->save();
-        return $view;
+        return response()->json($view,200);
     }
 }
