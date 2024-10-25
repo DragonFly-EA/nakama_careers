@@ -55,7 +55,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div>
+                            <div class="dropbtns-wrapper">
                                 <button class="dropbtn" @click="rejectApplication(application.id)" style="background-color:#DC3545;margin-right: 20px">Reject</button>
                                 <button class="dropbtn" @click="scheduleInterview(application.id)" style="background-color:#17A2B8">Schedule For Interview</button>
                             </div>

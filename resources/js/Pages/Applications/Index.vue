@@ -69,7 +69,7 @@
                                 </section>
                             </div>
                         </div>
-                    </div>Applicant Name
+                    </div>
                     <div class="mobile-card">
                         <ul>
                             <template v-if="applications.length>0">
