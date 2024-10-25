@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="bio">Requirements:</label>
                         <quill-editor
-                            placeholder="write description here..."
+                            placeholder="write requirements here..."
                             v-model="requirements"
                             @ready="onEditorReady"
                             @input="onEditorInput('requirements', $event)"

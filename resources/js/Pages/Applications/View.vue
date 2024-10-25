@@ -78,7 +78,7 @@ import Footer from "@/Layouts/Footer.vue";
 import axios  from "axios";
 export default {
     props: {
-        application: [],
+        application: {}
     },
     data(){
         return {
