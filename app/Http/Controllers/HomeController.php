@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Job;
+use App\Models\JobView;
 use App\Models\Status;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -25,5 +26,10 @@ class HomeController extends Controller
             'shortlisted' => $shortlisted,
             'jobs'=>$jobs
         ]);
+    }
+    public function view($id)
+    {
+        $views = JobView::where('job_id',$id)->count();
+        return response()->json(['views'=>$views]);
     }
 }

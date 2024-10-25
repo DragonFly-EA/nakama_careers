@@ -55,7 +55,7 @@
                             <h2>Job Views</h2>
                             <div class="job-views-filter">
                                 <label for="job-select">Jobs:</label>
-                                <select id="job-select">
+                                <select id="job-select" ref="job-select" @change="jobViews()">
                                     <template v-for="job in jobs" :key="job.id">
                                         <option :value="job.id">{{job.title}}</option>
                                     </template>
@@ -120,6 +120,10 @@ export default {
         //this.bubbleChart();
     },
     methods: {
+        jobViews(){
+            let id = (this.$refs.options.job-select);
+            console.log(id);
+        },
         formatNumber(value) {
             return new Intl.NumberFormat('en', { notation: 'compact', compactDisplay: 'short' }).format(value);
         },
