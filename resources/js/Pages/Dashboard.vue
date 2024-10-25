@@ -139,11 +139,13 @@ export default {
                         labels.push(new Date(0, i - 1).toLocaleString('default', { month: 'short' }));
                         data.push(monthData ? monthData.view_count : 0);
                     }
-
-                    // Update chart data
-                    this.jobViewsChart.data.labels = labels;
-                    this.jobViewsChart.data.datasets[0].data = data;
-                    this.jobViewsChart.update();
+                    console.log(labels);
+                    console.log(data);
+                    console.log(monthlyData);
+                    // // Update chart data
+                    // this.jobViewsChart.data.labels = labels;
+                    // this.jobViewsChart.data.datasets[0].data = data;
+                    // this.jobViewsChart.update();
                 })
                 .catch(error => {
                     console.error('Error fetching job views:', error);
