@@ -19,7 +19,7 @@
                                 <h3>years Of Experience: {{ application.years_of_experience }}</h3>
                                 <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class"
                                                                                                    :style="'background-color:' +application.status.color">{{
-                                        application.status.name
+                                        status===""?application.status.name:status
                                     }}</span>
                                 </h3>
                                 <p>Work Experience: {{ application.work_experience }}</p>
@@ -79,6 +79,11 @@ import axios  from "axios";
 export default {
     props: {
         application: [],
+    },
+    data(){
+        return {
+            status: "",
+        }
     },
     methods:{
         rejectApplication(id){
