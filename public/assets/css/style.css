@@ -823,9 +823,11 @@ form {
     }
     .dropbtns-wrapper .dropbtn{
         width: 100%;
-        margin-right: 0;
+        margin-right: 0!important;
     }
-    
+    .dropbtns-wrapper .dropbtn:nth-child(2){
+        margin-top: 10px;
+    }
 
 }
 
