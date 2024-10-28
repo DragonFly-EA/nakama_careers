@@ -12,6 +12,7 @@ use App\Models\ProfessionQualification;
 use App\Models\Referee;
 use App\Models\Status;
 use App\Models\User;
+use App\Notifications\ApplicationNotification;
 use Illuminate\Http\Request;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\DB;
@@ -100,7 +101,8 @@ class JobsApiController extends Controller
             $track->user_id = User::first()->id;
             $track->notes = 'A new job application from '.$application->full_name.' has been send to the application for the position of '.$application->job->title;
             $track->save();
-
+            //
+            $this->storeNotification($application->id);
             DB::commit();
             return response()->json(['message' => 'Successfully created application','status'=>200], 200);
         } catch (\Exception $e) {
@@ -117,5 +119,14 @@ class JobsApiController extends Controller
         $view->count = 1;
         $view->save();
         return response()->json(['data'=>$view,'status'=>200],200);
+    }
+    public function storeNotification($id)
+    {
+        $application = Application::find($id);
+        $details = [
+            'comment'=>$application->full_name.' has send an application',
+        ];
+        $details->notify(new ApplicationNotification($details));
+        return $application;
     }
 }

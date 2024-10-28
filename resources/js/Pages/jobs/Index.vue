@@ -20,6 +20,7 @@
                                             <th>#</th>
                                             <th>Title</th>
                                             <th>Location</th>
+                                            <th>Salary Range</th>
                                             <th>Description</th>
                                             <th>Requirements</th>
                                             <th>Expires on</th>
@@ -37,6 +38,7 @@
                                                     </Link>
                                                 </td>
                                                 <td>{{ job.location }}</td>
+                                                <td>{{ job.salary_range }}</td>
                                                 <td v-html="truncatedData(job.description)"></td>
                                                 <td v-html="truncatedData(job.requirements)"></td>
                                                 <td>{{ job.expires_on }}</td>
@@ -55,8 +57,10 @@
                                                         <div class="dropdown-content">
                                                             <Link :href="route('jobs.view',job.id)">View</Link>
                                                             <Link :href="route('jobs.edit',job.id)">Edit</Link>
-                                                            <a href="#">Archive</a>
-                                                            <a href="#">Delete</a>
+                                                            <a href="#">Deactivate</a>
+                                                            <template v-if="job.archive===1">
+                                                                <a href="#">Delete {{job.archive}}</a>
+                                                            </template>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -96,8 +100,10 @@
                                         <div class="dropdown-content">
                                             <Link :href="route('jobs.view',job.id)">View</Link>
                                             <Link :href="route('jobs.edit',job.id)">Edit</Link>
-                                            <a href="#">Archive</a>
-                                            <a href="#">Delete</a>
+                                            <a href="#">Deactivate</a>
+                                            <template v-if="job.archive===1">
+                                                <a href="#">Delete {{job.archive}}</a>
+                                            </template>
                                         </div>
                                     </div>
                                 </li>
@@ -133,4 +139,7 @@ export default {
 }
 </script>
 <style>
+ul li{
+    list-style: none;
+}
 </style>

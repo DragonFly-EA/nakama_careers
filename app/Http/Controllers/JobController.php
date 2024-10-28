@@ -41,6 +41,7 @@ class JobController extends Controller
             $job->location = $request->location;
             $job->description = $request->description;
             $job->requirements = $request->requirements;
+            $job->salary_range = $request->salary_range;
             $job->expires_on = $request->expires_on;
             $job->slug = Str::slug($request->title);
             $job->save();

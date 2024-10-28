@@ -4,52 +4,55 @@
         <AuthenticatedLayout>
         </AuthenticatedLayout>
         <main>
-            <Header/>
-            <section class="form-section">
-                <h1>{{job.title}}</h1>
-                <form @submit.prevent="createJob" class="form">
-                    <div v-if="loading" class="preloader">
-                        <div class="spinner"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" v-model="job.title" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" v-model="job.location" placeholder="Location">
-                    </div>
-                    <div class="form-group">
-                        <label for="expires_on">Expires On</label>
-                        <input type="date" id="expires_on" v-model="job.expires_on">
-                    </div>
-                    <div class="form-group">
-                        <label for="bio">Description:</label>
-                        <quill-editor
-                            placeholder="write description here..."
-                            v-model:content="job.description"
-                            @ready="onEditorReady"
-                            contentType="html"
-                            @input="onEditorInput('description', $event)"
-                            toolbar="full"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <label for="bio">Requirements:</label>
-                        <quill-editor
-                            placeholder="write description here..."
-                            v-model:content="job.requirements"
-                            @ready="onEditorReady"
-                            contentType="html"
-                            @input="onEditorInput('requirements', $event)"
-                            toolbar="full"
-                        />
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn-submit">Update</button>
-                    </div>
-                </form>
-            </section>
+            <div>
+                <Header/>
+                <section class="form-section">
+                    <h1>{{job.title}}</h1>
+                    <form @submit.prevent="createJob" class="form">
+                        <div v-if="loading" class="preloader">
+                            <div class="spinner"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" v-model="job.title" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" id="location" v-model="job.location" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="expires_on">Expires On</label>
+                            <input type="date" id="expires_on" v-model="job.expires_on">
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Description:</label>
+                            <quill-editor
+                                placeholder="write description here..."
+                                v-model:content="job.description"
+                                @ready="onEditorReady"
+                                contentType="html"
+                                @input="onEditorInput('description', $event)"
+                                toolbar="full"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Requirements:</label>
+                            <quill-editor
+                                placeholder="write description here..."
+                                v-model:content="job.requirements"
+                                @ready="onEditorReady"
+                                contentType="html"
+                                @input="onEditorInput('requirements', $event)"
+                                toolbar="full"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-submit">Update</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <Footer/>
         </main>
     </div>
 </template>
