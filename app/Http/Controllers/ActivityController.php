@@ -19,7 +19,7 @@ class ActivityController extends Controller
     }
     public function notifications()
     {
-        $notifications = Notification::where('read_at','!=',null)->get();
+        $notifications = Notification::all();
 //        $notifications = auth()->user()->notifications;
         return response()->json(['notifications' => $notifications]);
     }
