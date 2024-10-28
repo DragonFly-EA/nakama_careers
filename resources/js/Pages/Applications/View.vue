@@ -18,7 +18,7 @@
                                 <h3>Job Title: {{ application.job.title }}</h3>
                                 <h3>years Of Experience: {{ application.years_of_experience }}</h3>
                                 <h3 style="float: left;width: 100%;padding: 10px 0;">Status: <span class="status-class"
-                                                                                                   :style="'background-color:' +application.status.color">{{
+                                                                                                   :style="'background-color:' +statusColor===''?application.status.color:statusColor">{{
                                         status===""?application.status.name:status
                                     }}</span>
                                 </h3>
@@ -86,6 +86,7 @@ export default {
     data(){
         return {
             status: "",
+            statusColor: "",
         }
     },
     methods:{
@@ -93,6 +94,7 @@ export default {
             axios.put('/applications/status/'+id+'/'+statusId)
                 .then((response)=>{
                     this.status = response.data.statusName;
+                    this.statusColor = response.data.statusColor;
                 })
                 .catch((err)=>{
                     console.log(err)
