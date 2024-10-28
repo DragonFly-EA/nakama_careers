@@ -19,6 +19,7 @@ class ApplicationController extends Controller
     }
     public function view($id)
     {
+        $statuses = Status::all();
         $application = Application::with('job','status','attachments','referees','qualifications')->find($id);
         if ($application->review===0)
         {
@@ -28,6 +29,7 @@ class ApplicationController extends Controller
         }
         return Inertia::render('Applications/View',[
             'application' => $application,
+            'statuses' => $statuses,
         ]);
     }
     public function reject($id)

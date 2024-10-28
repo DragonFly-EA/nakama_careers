@@ -19,6 +19,7 @@ export default {
             axios.get('/api/notifications')
                 .then((response) => {
                     this.notifications = response.data;
+                    console.log(response.data)
                 })
                 .catch((err)=>{
                     console.log(err);
