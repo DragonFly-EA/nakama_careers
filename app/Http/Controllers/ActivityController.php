@@ -16,4 +16,17 @@ class ActivityController extends Controller
         $activity->activity = $activity;
         $activity->save();
     }
+    public function notifications()
+    {
+        $user = auth()->user();
+
+        if (!$user) {
+            return response()->json(['error' => 'User not authenticated'], 401);
+        }
+
+        $notifications = $user->notifications;
+        $user->unreadNotifications->markAsRead();
+//        $notifications = auth()->user()->notifications;
+        return response()->json(['notifications' => $notifications]);
+    }
 }

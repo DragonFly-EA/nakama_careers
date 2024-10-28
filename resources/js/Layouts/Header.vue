@@ -1,15 +1,29 @@
 <script>
 import { Head } from '@inertiajs/vue3';
+import axios from "axios";
 export default {
     data(){
         return{
             showSidebar: false,
+            notifications:[],
         }
+    },
+    created(){
+        this.getNotifications();
     },
     methods: {
         showSidebarMethod(){
             $(".sidebar").show();
-        }
+        },
+        getNotifications(){
+            axios.get('/notifications')
+                .then((response) => {
+                    this.notifications = response.data;
+                })
+                .catch((err)=>{
+                    console.log(err);
+                })
+        },
     }
 }
 </script>
@@ -25,14 +39,12 @@ export default {
         <!-- Notification Icon -->
         <div class="notification-icon">
             <i class="fas fa-bell"></i>
-            <span class="notification-count">3</span>
+            <span class="notification-count">{{notifications.length}}</span>
 
             <!-- Notification Dropdown -->
             <div class="notification-dropdown">
                 <ul>
-                    <li><a href="#">New comment on your post</a></li>
-                    <li><a href="#">New friend request</a></li>
-                    <li><a href="#">New message from John</a></li>
+                    <li v-for="(notification,index) in notifications" :key="index"><a href="#">{{notification.data}}</a></li>
                 </ul>
             </div>
         </div>
