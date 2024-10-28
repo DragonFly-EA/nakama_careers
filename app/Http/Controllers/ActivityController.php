@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,14 +19,7 @@ class ActivityController extends Controller
     }
     public function notifications()
     {
-        $user = auth()->user();
-
-        if (!$user) {
-            return response()->json(['error' => 'User not authenticated'], 401);
-        }
-
-        $notifications = $user->notifications;
-        $user->unreadNotifications->markAsRead();
+        $notifications = Notification::where('read_at','!=',null)->get();
 //        $notifications = auth()->user()->notifications;
         return response()->json(['notifications' => $notifications]);
     }
