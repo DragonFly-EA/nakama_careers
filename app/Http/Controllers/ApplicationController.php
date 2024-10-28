@@ -32,7 +32,7 @@ class ApplicationController extends Controller
             'statuses' => $statuses,
         ]);
     }
-    public function reject($id,$statusId)
+    public function status($id,$statusId)
     {
         $application = Application::find($id);
         $application->status_id = $statusId;
