@@ -92,8 +92,7 @@ export default {
         updateApplication(id,statusId){
             axios.put('/applications/status/'+id+'/'+statusId)
                 .then((response)=>{
-                    console.log(response)
-                    console.log(response.statusName)
+                    this.status = response.data.statusName;
                 })
                 .catch((err)=>{
                     console.log(err)
