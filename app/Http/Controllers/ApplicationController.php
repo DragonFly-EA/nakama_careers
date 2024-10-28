@@ -32,10 +32,10 @@ class ApplicationController extends Controller
             'statuses' => $statuses,
         ]);
     }
-    public function reject($id)
+    public function reject($id,$statusId)
     {
         $application = Application::find($id);
-        $application->status_id = Status::STATUS_REJECTED;
+        $application->status_id = $statusId;
         $application->push();
         return response()->json(['message'=>'Application Rejected']);
     }

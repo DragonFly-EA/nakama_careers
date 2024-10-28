@@ -57,9 +57,9 @@
                             </div>
                             <div class="dropbtns-wrapper">
                                 <template v-for="status in statuses">
-                                    <button class="dropbtn" @click="rejectApplication(application.id)" :style="'background-color:#DC3545;margin-right: 20px'">{{status.name}}</button>
+                                    <button class="dropbtn" @click="updateApplication(application.id,status.id)" :style="'background-color:'+status.color+';margin-right: 20px'">{{status.name}}</button>
                                 </template>
-                                <button class="dropbtn" @click="scheduleInterview(application.id)" style="background-color:#17A2B8">Schedule For Interview</button>
+<!--                                <button class="dropbtn" @click="scheduleInterview(application.id)" style="background-color:#17A2B8">Schedule For Interview</button>-->
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,8 @@ export default {
         }
     },
     methods:{
-        rejectApplication(id){
-            axios.put('/applications/reject/'+id)
+        updateApplication(id,statusId){
+            axios.put('/applications/status/'+id+'/'+statusId)
                 .then((response)=>{
                     console.log(response)
                 })

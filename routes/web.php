@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix'=>'applications'],function (){
         Route::get('/', [ApplicationController::class, 'index'])->name('applications.index');
         Route::get('/view/{id}', [ApplicationController::class, 'view'])->name('applications.view');
-        Route::put('/reject/{id}', [ApplicationController::class, 'reject'])->name('applications.reject');
+        Route::put('/status/{id}/{statusId}', [ApplicationController::class, 'status'])->name('applications.status');
     });
     //Administration
     Route::group(['prefix'=>'users'],function (){
