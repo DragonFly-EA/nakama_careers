@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Api\JobsApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +20,7 @@ Route::get('jobs',[JobsApiController::class,'index']);
 Route::get('jobs/{id}',[JobsApiController::class,'view']);
 Route::post('jobs/store',[JobsApiController::class,'store']);
 Route::post('jobs/views/{id}',[JobsApiController::class,'storeViews']);
+Route::get('notifications',[ActivityController::class,'notifications']);
 
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

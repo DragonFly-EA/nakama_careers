@@ -16,7 +16,7 @@ export default {
             $(".sidebar").show();
         },
         getNotifications(){
-            axios.get('/notifications')
+            axios.get('/api/notifications')
                 .then((response) => {
                     this.notifications = response.data;
                 })

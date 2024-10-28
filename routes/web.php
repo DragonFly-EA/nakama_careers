@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
@@ -51,9 +50,6 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix'=>'users'],function (){
         Route::get('/', [UserController::class, 'index'])->name('users.index');
     });
-
-    //
-    Route::get('notifications',[ActivityController::class,'notifications']);
 });
 
 require __DIR__.'/auth.php';
