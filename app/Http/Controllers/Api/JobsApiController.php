@@ -129,4 +129,12 @@ class JobsApiController extends Controller
         $application->notify(new ApplicationNotification($details));
         return $application;
     }
+    public function search($search)
+    {
+        $jobs = Job::where('title', 'like', '%' . $search . '%')
+            ->orWhere('description', 'like', '%' . $search . '%') // Example for searching in the description too
+            ->get();
+
+        return $jobs;
+    }
 }
