@@ -19,7 +19,7 @@ class ApplicationController extends Controller
     }
     public function view($id)
     {
-        $statuses = Status::all();
+        $statuses = Status::where('id','!=',Status::STATUS_REVIEW)->get();
         $application = Application::with('job','status','attachments','referees','qualifications')->find($id);
         if ($application->review===0)
         {
