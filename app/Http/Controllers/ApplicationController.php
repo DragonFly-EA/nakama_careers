@@ -38,6 +38,6 @@ class ApplicationController extends Controller
         $application = Application::find($id);
         $application->status_id = $statusId;
         $application->push();
-        return response()->json(['message'=>'Application '.$status->name]);
+        return response()->json(['message'=>'Application '.$status->name,'statusName'=>$status->name]);
     }
 }

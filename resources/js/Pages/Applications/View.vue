@@ -93,6 +93,7 @@ export default {
             axios.put('/applications/status/'+id+'/'+statusId)
                 .then((response)=>{
                     console.log(response)
+                    console.log(response.statusName)
                 })
                 .catch((err)=>{
                     console.log(err)
