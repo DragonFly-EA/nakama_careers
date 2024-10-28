@@ -57,7 +57,7 @@
                             </div>
                             <div class="dropbtns-wrapper">
                                 <template v-for="status in statuses">
-                                    <button class="dropbtn" @click="updateApplication(application.id,status.id)" :style="'background-color:'+status.color+';margin-right: 20px'">{{status.name}}</button>
+                                    <button class="dropbtn" @click="updateApplication(application.id,status.id)" :style="'background-color:'+status.color+';margin: 0 20px 20px 0'">{{status.name}}</button>
                                 </template>
 <!--                                <button class="dropbtn" @click="scheduleInterview(application.id)" style="background-color:#17A2B8">Schedule For Interview</button>-->
                             </div>
