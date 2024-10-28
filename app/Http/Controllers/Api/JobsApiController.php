@@ -126,7 +126,7 @@ class JobsApiController extends Controller
         $details = [
             'comment'=>$application->full_name.' has send an application',
         ];
-        $details->notify(new ApplicationNotification($details));
+        $application->notify(new ApplicationNotification($details));
         return $application;
     }
 }
