@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//https://booking.rwandair.com/online/packages/api/v1/search?origin=NBO&destination=KGK&departure_date=2024-10-28&return_date=2024-10-29&occupancy={"adults":2}[&lang=en]
+// https://booking.rwandair.com//online/packages/api/v1/search?departure_date=2024-10-22&lang=es&occupancy=[{"adults":2}]&origin=LHR&return_date=2024-10-24&destination=KGL&lang=en
+
 Route::get('jobs',[JobsApiController::class,'index']);
 Route::get('jobs/{id}',[JobsApiController::class,'view']);
 Route::post('jobs/store',[JobsApiController::class,'store']);
