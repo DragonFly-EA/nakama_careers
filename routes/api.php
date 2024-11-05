@@ -25,6 +25,7 @@ Route::post('jobs/store',[JobsApiController::class,'store']);
 Route::post('jobs/views/{id}',[JobsApiController::class,'storeViews']);
 Route::get('jobs/search/{search}',[JobsApiController::class,'search']);
 Route::get('notifications',[ActivityController::class,'notifications']);
+Route::get('jobs/count',[JobsApiController::class,'count']);
 
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

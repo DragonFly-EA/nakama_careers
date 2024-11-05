@@ -137,4 +137,12 @@ class JobsApiController extends Controller
 
         return $jobs;
     }
+
+    public function count()
+    {
+        return Job::all()->count();
+
+    }
+
+
 }
