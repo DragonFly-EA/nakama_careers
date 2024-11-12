@@ -22,10 +22,8 @@ class JobsApiController extends Controller
     //
     public function index()
     {
-        return Job::all();
-
+        return Job::orderBy('created_at')->get();
     }
-
     public function view($id)
     {
         $hash = new Hashids('', 10);
