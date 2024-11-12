@@ -22,7 +22,7 @@ class JobsApiController extends Controller
     //
     public function index()
     {
-        return Job::orderBy('created_at')->get();
+        return Job::orderBy('created_at','desc')->get();
     }
     public function view($id)
     {
