@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('type_id')->constrained('types');
             $table->string('title');
             $table->string('location')->nullable();
             $table->string('salary_range')->nullable();

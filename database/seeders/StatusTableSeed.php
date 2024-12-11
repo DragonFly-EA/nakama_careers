@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Status;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class StatusTableSeed extends Seeder
 {
@@ -40,6 +42,27 @@ class StatusTableSeed extends Seeder
                 'color' => '#28A745',
             ],
         ];
+        $types = [
+            [
+                'name'=>'Full-Time',
+            ],
+            [
+                'name'=>'Part Time',
+            ],
+            [
+                'name'=>'Contract',
+            ],
+            [
+                'name'=>'Freelance',
+            ],
+            [
+                'name'=>'Consultant',
+            ],
+            [
+                'name'=>'Internship',
+            ],
+        ];
         Status::insert($status);
+        Type::insert($types);
     }
 }
