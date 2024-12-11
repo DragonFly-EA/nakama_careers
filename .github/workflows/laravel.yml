@@ -33,6 +33,7 @@ jobs:
           port: 21  # Default for FTP/FTPS
           passive: true
           dangerous-clean-slate: false
+          strict: false
 
 
 #name: Deploy Laravel Project on push
