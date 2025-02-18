@@ -23,6 +23,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return redirect('/login');
 });
+Route::post('login',function (){
+    dd("hello");
+});
 Route::get('/jobsViews/{id}', [HomeController::class, 'view'])->name('jobsViews');
 Route::middleware('auth')->group(function () {
 
