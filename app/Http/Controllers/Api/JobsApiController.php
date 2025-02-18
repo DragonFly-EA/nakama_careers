@@ -32,9 +32,6 @@ class JobsApiController extends Controller
     }
     public function store(Request $request)
     {
-        header("Access-Control-Allow-Origin: *");
-//        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Authorization");
         try {
             DB::beginTransaction();
 
@@ -113,9 +110,6 @@ class JobsApiController extends Controller
     }
     public function storeViews($id)
     {
-        header("Access-Control-Allow-Origin: *");
-//        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Authorization");
         $hash = new Hashids('', 10);
         $ids = $hash->decode($id)[0];
         $view = new JobView();
