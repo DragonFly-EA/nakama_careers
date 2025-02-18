@@ -23,7 +23,7 @@
 </head>
 <body>
 @inertia
-<script src="https://kit.fontawesome.com/39a57ebc35.js" crossorigin="anonymous"></script>
+{{--<script src="https://kit.fontawesome.com/39a57ebc35.js" crossorigin="anonymous"></script>--}}
 <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
